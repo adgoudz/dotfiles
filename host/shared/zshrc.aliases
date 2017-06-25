@@ -1,0 +1,8 @@
+
+alias sandbox='cd $SANDBOX'
+alias bin='cd $BIN'
+alias dotfiles='cd $DOTFILES'
+alias installs='cd $INSTALLS'
+alias repos='cd $REPOS'
+
+alias path='echo -e ${PATH//:/\\n}'
