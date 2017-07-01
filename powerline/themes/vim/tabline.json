@@ -12,7 +12,8 @@
 					},
 					{
 						"function": "tabnr",
-						"after": " ",
+                        "before": " ",
+						"after": ". ",
 						"priority": 5
 					},
 					{
@@ -20,11 +21,12 @@
 						"args": {
 							"display_no_file": true
 						},
+						"after": " ",
 						"priority": 10
 					},
 					{
 						"function": "tab_modified_indicator",
-						"priority": 5
+                        "priority": 5
 					}
 				]
 			},
@@ -35,31 +37,8 @@
 				}
 			},
 			{
-				"type": "segment_list",
-				"function": "powerline.listers.vim.bufferlister",
-				"include_function": "single_tab",
-				"segments": [
-					{
-						"function": "bufnr",
-						"after": " ",
-						"priority": 5
-					},
-					{
-						"function": "file_name",
-						"args": {
-							"display_no_file": true
-						},
-						"priority": 10
-					},
-					{
-						"function": "modified_indicator",
-						"priority": 5
-					}
-				]
-			},
-			{
 				"type": "string",
-				"highlight_groups": ["background"],
+				"highlight_groups": ["tab:background"],
 				"draw_soft_divider": false,
 				"draw_hard_divider": false,
 				"width": "auto"
