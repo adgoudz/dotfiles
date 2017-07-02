@@ -1,3 +1,4 @@
+
 {
 	"name": "Solarized dark for vim",
 	"groups": {
@@ -5,9 +6,11 @@
         "tab:file_directory":        { "fg": "solarized:base02", "bg": "solarized:base2", "attrs": [] },
         "tab:file_name":             "tab:file_directory",
         "tab:tabnr":                 "tab:file_directory",
-		"tab:divider":               "branch:divider",
 
-        "tab_nc:modified_indicator": { "fg": "solarized:base3", "bg": "solarized:base01", "attrs": [] },
+        "tab_nc:modified_indicator": { "fg": "solarized:base03", "bg": "solarized:base0", "attrs": ["bold"] },
+		"tab_nc:file_directory":     { "fg": "solarized:base1", "bg": "solarized:base02", "attrs": [] },
+		"tab_nc:file_name":          "tab_nc:file_directory",
+		"tab_nc:tabnr":              "tab_nc:file_directory",
 
         "nerdtree:path":             { "fg": "solarized:base03", "bg": "solarized:base01", "attrs": ["bold"] },
 		"tagbar":                    { "fg": "solarized:base03", "bg": "solarized:base01", "attrs": ["bold"] },
@@ -15,7 +18,7 @@
 		"information:additional":    { "fg": "solarized:base2", "bg": "solarized:base01", "attrs": [] },
 		"information:unimportant":   { "fg": "solarized:base3", "bg": "solarized:base01", "attrs": [] },
 		"background":                { "fg": "solarized:base3", "bg": "solarized:base02", "attrs": [] },
-		"background:divider":        { "fg": "solarized:base00", "bg": "solarized:base02", "attrs": [] },
+		"background:divider":        { "fg": "solarized:base0", "bg": "solarized:base02", "attrs": [] },
 		"mode":                      { "fg": "solarized:base3", "bg": "solarized:green", "attrs": ["bold"] },
 		"visual_range":              { "fg": "solarized:green", "bg": "solarized:base3", "attrs": ["bold"] },
 		"modified_indicator":        { "fg": "solarized:yellow", "bg": "solarized:base01", "attrs": ["bold"] },
@@ -63,7 +66,7 @@
 		"i": {
 			"groups": {
                 "tab:background":         { "fg": "solarized:base3", "bg": "solarized:base02", "attrs": [] },
-                "tab:divider":            { "fg": "solarized:base1", "bg": "solarized:base01", "attrs": [] },
+                "tab:divider":            { "fg": "solarized:base00", "bg": "solarized:base02", "attrs": [] },
 
 				"file_directory":         { "fg": "solarized:base02", "bg": "solarized:base2", "attrs": [] },
 
