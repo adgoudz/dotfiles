@@ -47,21 +47,6 @@ fi
 # Aliases
 #---------
 
-alias zshrc='source ~/.zshrc'
-
-alias pwd='pwd -P'
-alias cwd='cd $(pwd -P)'
-
-alias lla='ls -lAh'
-alias llt='ls -lhtr'
-alias lld='find . -maxdepth 1 -type d ! -name \.\* -printf "%f\0" | xargs -0 ls -ld'
-alias ll.='ls -lhd .*'
-
-alias fgrep='find . ! -path "./_*" ! -path "./.git*" ! -type l ! -type d -print0 | xargs -0 grep --color=auto' 
-alias egrep='printenv | grep'
-alias agrep='alias | grep'
-alias cgrep='crontab -l | grep'
-
 if [[ -e "$HOME/.zshrc.aliases" ]]; then
     source "$HOME/.zshrc.aliases"
 fi

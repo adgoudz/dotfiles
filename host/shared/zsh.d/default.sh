@@ -18,3 +18,4 @@ pathmunge /sbin after
 #-------------
 
 export PYTHON_USER_SITE=$($PYTHON -m site --user-site)
+
