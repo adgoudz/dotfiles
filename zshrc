@@ -27,9 +27,10 @@ fi
 
 umask 022
 
+export LANG=en_US.UTF-8
 export EDITOR=vim
 export PAGER=less
-export LESS=FRI
+export LESS=RI
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
