@@ -1,0 +1,12 @@
+
+Host          *
+IdentityFile  ~/.ssh/id_rsa
+PreferredAuthentications  publickey
+
+Host      github
+User      agoudzwaard
+Hostname  github.com
+
+Host          git.divio.com
+Hostname      git.divio.com
+IdentityFile  ~/.ssh/id_rsa_divio
