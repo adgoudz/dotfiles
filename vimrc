@@ -10,6 +10,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 
 let g:NERDSpaceDelims = 1
 let g:NERDTreeChDirMode = 2
+let g:NERDTreeRespectWildIgnore = 1
 
 let g:tagbar_width = 32
 let g:tagbar_map_togglefold = 'za'
@@ -21,7 +22,7 @@ let g:snipMate.snippet_version = 1
 " Turn off bad whitesapce highlighting before plugin loads
 autocmd BufWinEnter,WinEnter,FileType * let b:bad_whitespace_show = 0
 
-" Add custom snippets to path
+" Point plugins to configuration
 set runtimepath+=$DOTFILES
 
 call pathogen#infect()
@@ -75,7 +76,7 @@ set dir-=~/tmp
 
 set dir+=~/.vim/tmp
 
-set wildignore+=*/var/*,*/_build/*
+set wildignore+=*/var/*,*/_build/*,*.pyc
 
 set swapsync=
 set maxmem=2000000
