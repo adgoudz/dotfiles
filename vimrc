@@ -105,7 +105,7 @@ nnoremap K vwhd
 
 " Move lines
 nnoremap { :m+==
-nnoremap } :m-2== 
+nnoremap } :m-2==
 inoremap { :m+==gi
 inoremap } :m-2==gi
 vnoremap { :m'>+gv=gv
@@ -116,17 +116,20 @@ nnoremap <Space> @q
 
 " Window navigation
 nnoremap <C-H>      <C-W>h
-nnoremap <C-W>h     2<C-W>h 
+nnoremap <C-W>h     2<C-W>h
 nnoremap <leader>wh 2<C-W>h
-nnoremap <C-J>      <C-W>j 
-nnoremap <C-W>l     2<C-W>l 
+nnoremap <C-J>      <C-W>j
+nnoremap <C-W>l     2<C-W>l
 nnoremap <leader>wl 2<C-w>l
-nnoremap <C-K>      <C-W>k 
-nnoremap <C-L>      <C-W>l 
+nnoremap <C-K>      <C-W>k
+nnoremap <C-L>      <C-W>l
 
 " Tab switching
-nnoremap <silent> [5;5~ :tabp<CR>
-nnoremap <silent> [6;5~ :tabn<CR>
+nnoremap <silent> [5~ :tabp<CR>
+nnoremap <silent> OH :tabp<CR>
+nnoremap <silent> [6~ :tabn<CR>
+nnoremap <silent> OF :tabn<CR>
+
 
 " Buffer switching
 nnoremap [ :bN!<CR>
@@ -135,13 +138,13 @@ nnoremap ] :bn!<CR>
 " Options
 nnoremap <silent> <leader>noh :nohlsearch<CR>
 nnoremap <silent> <leader>ln :set nu!<CR>
+nnoremap <silent> <leader>nw :set nowrap!<CR>
 
 " Plugins
 nmap <silent> <leader>tb :TagbarToggle<CR>
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
 nmap <silent> <leader>nf :NERDTreeFind<CR>
 nmap <silent> <leader>ew :EraseBadWhitespace<CR>
-nmap <silent> <leader>\ <Plug>VimwikiToggleListItem 
 
 nmap <silent> <leader>al :Align<CR>
 
@@ -156,7 +159,7 @@ syntax on
 
 set background=dark
 colorscheme solarized
- 
+
 " Powerline (if available)
 :silent !command -v powerline > /dev/null
 
