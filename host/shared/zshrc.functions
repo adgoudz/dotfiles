@@ -5,7 +5,7 @@ pathmunge() {
 
     # Remove existing
     PATH=${PATH/#${DIR}:}
-    PATH=${PATH/:${DIR}}
+    PATH=${PATH//:${DIR}}
 
     if [[ $AFTER = 'after' ]]; then
         export PATH=${PATH}:${DIR} # last

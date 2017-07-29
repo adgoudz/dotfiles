@@ -4,7 +4,10 @@ alias bin='cd $BIN'
 alias dotfiles='cd $DOTFILES'
 alias installs='cd $INSTALLS'
 alias repos='cd $REPOS'
-alias usersite='cd $PYTHON_USER_SITE/../../..'
+
+alias venvs='cd $WORKON_HOME'
+alias userbase='cd $PYTHON_USER_BASE'
+alias userbase3='cd $PYTHON3_USER_BASE'
 
 alias pwd='pwd -P'
 alias cwd='cd $(pwd -P)'

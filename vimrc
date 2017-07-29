@@ -130,7 +130,6 @@ nnoremap <silent> OH :tabp<CR>
 nnoremap <silent> [6~ :tabn<CR>
 nnoremap <silent> OF :tabn<CR>
 
-
 " Buffer switching
 nnoremap [ :bN!<CR>
 nnoremap ] :bn!<CR>
