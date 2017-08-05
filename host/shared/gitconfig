@@ -12,7 +12,7 @@
 [log]
 	date = local
 [pretty]
-	andrew = %C(bold magenta)%h%Creset %C(yellow)%<(12,trunc)%an%Creset %<(24)%C(cyan)%ad%Creset %<(50,trunc)%s%C(bold red) %d%Creset
+	andrew = %C(bold magenta)%h%Creset %C(cyan)%<(12,trunc)%an%Creset %<(24)%C(blue)%ad%Creset %<(50,trunc)%s%C(bold red) %d%Creset
 [push]
 	default = simple
 [user]
