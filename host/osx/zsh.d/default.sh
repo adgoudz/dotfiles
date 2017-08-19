@@ -30,6 +30,8 @@ export PYTHON3_USER_BASE=$($PYTHON3 -m site --user-base)
 export PYENV_ROOT=$HOME/.local/pyenv
 export WORKON_HOME=$HOME/.local/venvs
 
+export NODE_ENV=development
+
 #------
 # Path
 #------
