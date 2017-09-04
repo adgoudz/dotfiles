@@ -22,6 +22,9 @@ let g:snipMate.snippet_version = 1
 " Turn off bad whitesapce highlighting before plugin loads
 autocmd BufWinEnter,WinEnter,FileType * let b:bad_whitespace_show = 0
 
+" Erase bad whitespace on save
+autocmd BufWritePre * :EraseBadWhitespace
+
 " Point plugins to configuration
 set runtimepath+=$DOTFILES
 
