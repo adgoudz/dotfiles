@@ -30,6 +30,7 @@ alias gdc='gdca'  # oh-my-zsh
 alias gla='git log --graph --pretty=andrew'
 alias glcl='git log --graph --pretty=andrew --cherry-mark --left-only master...'
 alias glcr='git log --graph --pretty=andrew --cherry-mark --right-only master...'
+alias gcd='git checkout develop'  # git flow
 alias gcol="git checkout '@{-1}'"
 alias gbv='git branch --verbose'
 alias gcpm='git cherry-pick master'
