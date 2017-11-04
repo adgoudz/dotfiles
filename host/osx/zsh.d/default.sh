@@ -36,7 +36,7 @@ export NODE_ENV=development
 # Path
 #------
 
-eval "$(/usr/local/bin/pyenv init -)" 
+eval "$(/usr/local/bin/pyenv init -)"
 
 # Front of path (in reverse)
 pathmunge $PYTHON_USER_BASE/bin
