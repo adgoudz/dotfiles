@@ -21,7 +21,7 @@ export CLICOLOR=1
 # Development
 #-------------
 
-export PYTHON=/usr/local/bin/python
+export PYTHON=/usr/local/bin/python2
 export PYTHON3=/usr/local/bin/python3
 
 export PYTHON_USER_BASE=$($PYTHON -m site --user-base)
