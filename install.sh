@@ -17,13 +17,11 @@ ln -sf ~/$DOTFILES/ssh_config ~/.ssh/config
 
 ln -Fsf $DOTFILES/atom ~/.atom
 
-
 # Install oh-my-zsh
 
 if [[ ! -e ~/.oh-my-zsh ]]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
-
 
 # Configure pip
 
@@ -32,10 +30,9 @@ PIP_HOME=~/Library/Application\ Support/pip
 mkdir "$PIP_HOME" &> /dev/null
 ln -sf ~/$DOTFILES/pip.conf "$PIP_HOME"/
 
-
 # Install powerline
 
-PYTHON3_USER_BASE=~/Library/Python/3.6
+PYTHON3_USER_BASE=$(/usr/local/bin/python3 -m site --user-base)
 
 mkdir -p $PYTHON3_USER_BASE
 cd $PYTHON3_USER_BASE  # This is where pip will install editable eggs
