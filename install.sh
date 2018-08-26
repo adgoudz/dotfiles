@@ -6,6 +6,7 @@ ln -sf $DOTFILES/bashrc ~/.bashrc
 ln -sf $DOTFILES/vimrc ~/.vimrc
 ln -sf $DOTFILES/gitignore ~/.gitignore
 ln -sf $DOTFILES/zshrc ~/.zshrc
+ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
 
 ln -sf $DOTFILES/local/gitconfig ~/.gitconfig
 ln -sf $DOTFILES/local/zshrc.env ~/.zshrc.env

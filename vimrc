@@ -1,5 +1,5 @@
 :autocmd!
-
+"
 """"""""""
 " plugins
 
@@ -62,8 +62,8 @@ set incsearch
 """""""""""
 " Behavior
 
-set term=screen-256color
-set t_Co=16
+" Eliminate timeouts for key codes (defaults to timeoutlen)
+set ttimeoutlen=1
 
 set noerrorbells
 set shortmess+=I
@@ -99,6 +99,12 @@ endif
 """""""""""
 " Mappings
 
+" Support xterm modifiers under tmux (mapped keys only)
+if &term =~ '^screen'
+    set <xRight>=[1;*C
+    set <xLeft>=[1;*D
+endif
+
 " Line navigation
 noremap H ^
 noremap L $
@@ -128,14 +134,14 @@ nnoremap <C-K>      <C-W>k
 nnoremap <C-L>      <C-W>l
 
 " Tab switching
-nnoremap <silent> [5~ :tabp<CR>
-nnoremap <silent> OH :tabp<CR>
-nnoremap <silent> [6~ :tabn<CR>
-nnoremap <silent> OF :tabn<CR>
+nnoremap <silent> <A-Left> :tabp<CR>
+nnoremap <silent> <Home> :tabp<CR>
+nnoremap <silent> <A-Right> :tabn<CR>
+nnoremap <silent> <End> :tabn<CR>
 
 " Buffer switching
-nnoremap [ :bN!<CR>
-nnoremap ] :bn!<CR>
+nnoremap <C-Left> :bN!<CR>
+nnoremap <C-Right> :bn!<CR>
 
 " Options
 nnoremap <silent> <leader>noh :nohlsearch<CR>
