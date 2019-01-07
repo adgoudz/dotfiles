@@ -1,7 +1,7 @@
 :autocmd!
-"
+
 """"""""""
-" plugins
+" Plugins
 
 let g:ctrlp_extensions = ['buffertag']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20'
@@ -25,12 +25,40 @@ autocmd BufWinEnter,WinEnter,FileType * let b:bad_whitespace_show = 0
 " Erase bad whitespace on save
 autocmd BufWritePre * :EraseBadWhitespace
 
-" Point plugins to configuration
-set runtimepath+=$DOTFILES
+set runtimepath+=$DOTFILES  " Point plugins to configuration
 
 call pathogen#infect()
+:helptags
 
-:Helptags
+"""""""""""
+" Behavior
+
+filetype plugin indent on
+
+set nocompatible
+
+" Eliminate timeouts for key codes
+set timeout          " Default
+set timeoutlen=1000  " Default
+set ttimeoutlen=1    " Defaults to timeoutlen
+
+set noerrorbells
+set shortmess+=I  " Turn off intro screen
+
+set viminfo='10,%  " Remember marks, buffer list
+
+set path+=$REPOS
+
+set dir=~/.vim/tmp  " Swap file directory
+
+set wildignore+=*/var/*,*/_build/*,*.pyc
+
+set sessionoptions-=options
+
+set ttyfast
+set swapsync=
+set maxmem=2000000
+set maxmemtot=2000000
 
 """"""""""
 " Editing
@@ -39,16 +67,21 @@ set encoding=utf-8
 
 set backspace=indent,eol,start
 
-set shiftwidth=4
-set tabstop=4
-
-set expandtab
-set smarttab
-
 set autoindent
 set smartindent
+set expandtab
+set smarttab
+set tabstop=4     " Tab width
+set shiftwidth=4  " Indentation width
+set shiftround    " Indent to next multiple of 'shiftwidth'
 
-set colorcolumn=79
+set complete-=i
+
+" Keep some space between the cursor and the window edge
+set scrolloff=1
+set sidescrolloff=5
+
+set nrformats-=octal  " Influences C-{X,A}
 
 """"""""""""
 " Searching
@@ -58,43 +91,6 @@ set smartcase
 
 set hlsearch
 set incsearch
-
-"""""""""""
-" Behavior
-
-" Eliminate timeouts for key codes (defaults to timeoutlen)
-set ttimeoutlen=1
-
-set noerrorbells
-set shortmess+=I
-" set tags+=~/.ctags
-
-set viminfo='10,%
-set path+=**1/lib;$REPOS
-
-set dir-=.
-set dir-=/var/tmp
-set dir-=/tmp.
-set dir-=~/tmp
-
-set dir+=~/.vim/tmp
-
-set wildignore+=*/var/*,*/_build/*,*.pyc
-
-set swapsync=
-set maxmem=2000000
-set maxmemtot=2000000
-
-filetype plugin indent on
-
-autocmd BufEnter *md set ft=markdown
-autocmd BufEnter *rc set ft=sh
-autocmd BufEnter *vimrc set ft=vim
-
-" Disable for performance
-if version >= 704
-  set regexpengine=1
-endif
 
 """""""""""
 " Mappings
@@ -125,13 +121,13 @@ nnoremap <Space> @q
 
 " Window navigation
 nnoremap <C-H>      <C-W>h
-nnoremap <C-W>h     2<C-W>h
-nnoremap <leader>wh 2<C-W>h
 nnoremap <C-J>      <C-W>j
-nnoremap <C-W>l     2<C-W>l
-nnoremap <leader>wl 2<C-w>l
 nnoremap <C-K>      <C-W>k
 nnoremap <C-L>      <C-W>l
+nnoremap <C-W>h     2<C-W>h
+nnoremap <leader>wh 2<C-W>h
+nnoremap <C-W>l     2<C-W>l
+nnoremap <leader>wl 2<C-w>l
 
 " Tab switching
 nnoremap <silent> <A-Left> :tabp<CR>
@@ -144,9 +140,10 @@ nnoremap <C-Left> :bN!<CR>
 nnoremap <C-Right> :bn!<CR>
 
 " Options
-nnoremap <silent> <leader>noh :nohlsearch<CR>
 nnoremap <silent> <leader>ln :set nu!<CR>
 nnoremap <silent> <leader>nw :set nowrap!<CR>
+nnoremap <silent> <leader>ls :set list!<CR>
+nnoremap <silent> <leader>noh :nohlsearch<CR>
 
 " Plugins
 nmap <silent> <leader>tb :TagbarToggle<CR>
@@ -161,7 +158,11 @@ nmap <silent> <leader>al :Align<CR>
 
 set ruler
 set number
-set laststatus=2
+set wildmenu
+set laststatus=2  " Always show the status line
+set colorcolumn=79
+
+set listchars=tab:».,trail:·,extends:>,precedes:<,nbsp:+  " See :set list!
 
 syntax on
 
@@ -177,3 +178,4 @@ colorscheme solarized
     python3 powerline_setup()
     python3 del powerline_setup
 :endif
+

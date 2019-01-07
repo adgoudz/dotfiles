@@ -1,2 +1,4 @@
 **/.DS_Store
-howto.txt
+vim/.vim/autoload/pathogen.vim
+vim/.vim/bundle/*
+vim/.vim/tmp

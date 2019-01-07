@@ -1,8 +1,0 @@
-
-BASE=$(cd $(dirname $0)/$(dirname $(readlink $0))/.. && pwd -P)
-
-#--------
-# Shared
-#--------
-
-source $BASE/host/shared/zshrc.functions
