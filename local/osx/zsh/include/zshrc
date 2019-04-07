@@ -1,0 +1,12 @@
+
+# Development path
+
+if [[ -n $PYENV_ROOT ]]; then
+    eval "$($BREW_PREFIX/bin/pyenv init -)"
+
+    if [[ -n $PYENV_VIRTUALENV_INIT ]]; then
+        eval "$($BREW_PREFIX/bin/pyenv virtualenv-init -)"
+    fi
+fi
+
+# vim: ft=zsh
