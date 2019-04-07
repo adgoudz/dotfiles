@@ -1,20 +1,19 @@
 [branch "master"]
 	mergeoptions = --no-ff --no-commit
-[color]
-	ui = true
 [core]
 	excludesfile = /Users/Andrew/Sandbox/dotfiles/gitignore
-	sparseCheckout = true
-	pager = less -S
+	pager = less -SXE
 [credential]
 	username = adgoudz@gmail.com
 	helper = cache --timeout=3600
+[format]
+	pretty = %C(bold magenta)%h%Creset %C(cyan)%<(12,trunc)%an%Creset %<(24)%C(blue)%ad%Creset %<(50,trunc)%s%C(bold red) %d%Creset
 [log]
 	date = local
-[pretty]
-	andrew = %C(bold magenta)%h%Creset %C(cyan)%<(12,trunc)%an%Creset %<(24)%C(blue)%ad%Creset %<(50,trunc)%s%C(bold red) %d%Creset
 [push]
 	default = simple
 [user]
 	name = Andrew Goudzwaard
 	email = adgoudz@gmail.com
+
+# vim: ft=gitconfig
