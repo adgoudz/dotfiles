@@ -1,3 +1,3 @@
 
-# Default to emacs keymap
+# Use to emacs keymap
 bindkey -e

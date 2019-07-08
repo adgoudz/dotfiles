@@ -51,3 +51,8 @@ fi
 include "include/aliases.zsh"
 include "include/bindings.zsh"
 
+# Prezto
+
+if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi

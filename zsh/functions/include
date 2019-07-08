@@ -1,21 +1,36 @@
 
-local target=$1
+local target_dir=$1
 local current_file=${funcstack[2]}
 
-setopt localoptions extendedglob
-
-# If the target is relative, determine where the current file lives
-if [[ $target != /* ]]; then
+# If the target directory is relative, determine where the current file lives
+if [[ $target_dir != /* ]]; then
     local origin="$current_file:P:h"
-    target="$origin/$target"
+    target_dir="$origin/$target_dir"
 fi
 
-# Allow for applying filename generation to includes
-setopt localoptions globsubst
+local -a target_files
 
-# Unset NULL_GLOB so that this errors out when nothing matches
-for f in $target(#q^N); do
+function {
+    # LOCAL_OPTIONS is set here so that we can customize options without
+    # interfering with the options set by the current shell. We need to do
+    # this in an anonymous function, otherwise LOCAL_OPTIONS will still be
+    # during the execution of the file(s) that are sourced below.
+    setopt localoptions
+
+    # Enable GLOB_SUBST to allow filename patterns as arguments to the
+    # include function. EXTENDED_GLOB is enabled so that we can use glob
+    # qualifiers.
+    setopt globsubst extendedglob
+
+    # The qualifier below unsets NULL_GLOB so that this errors out when
+    # nothing matches.
+    target_files=( $target_dir(#q^N) )
+}
+
+for f in ${target_files[@]}; do
     if [[ -r "$f" ]]; then
         source $f
     fi
 done
+
+# vim: ft=zsh

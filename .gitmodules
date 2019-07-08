@@ -1,0 +1,54 @@
+[submodule "vim/.vim/bundle/align"]
+	path = vim/.vim/bundle/align
+	url = http://github.com/vim-scripts/Align.git
+[submodule "vim/.vim/bundle/bufkill.vim"]
+	path = vim/.vim/bundle/bufkill.vim
+	url = http://github.com/vim-scripts/bufkill.vim.git
+[submodule "vim/.vim/bundle/ctrlp.vim"]
+	path = vim/.vim/bundle/ctrlp.vim
+	url = http://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/.vim/bundle/nerdcommenter"]
+	path = vim/.vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule "vim/.vim/bundle/tagbar"]
+	path = vim/.vim/bundle/tagbar
+	url = http://github.com/majutsushi/tagbar
+[submodule "vim/.vim/bundle/vim-repeat"]
+	path = vim/.vim/bundle/vim-repeat
+	url = http://github.com/tpope/vim-repeat.git
+[submodule "vim/.vim/bundle/vim-surround"]
+	path = vim/.vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround
+[submodule "vim/.vim/bundle/vim-bad-whitespace"]
+	path = vim/.vim/bundle/vim-bad-whitespace
+	url = http://github.com/bitc/vim-bad-whitespace.git
+[submodule "vim/.vim/bundle/vim-colors-solarized"]
+	path = vim/.vim/bundle/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/.vim/bundle/vim-extline"]
+	path = vim/.vim/bundle/vim-extline
+	url = https://github.com/drmikehenry/vim-extline.git
+[submodule "vim/.vim/bundle/vim-snipmate"]
+	path = vim/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/.vim/bundle/tlib_vim"]
+	path = vim/.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/.vim/bundle/vim-snippets"]
+	path = vim/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim/.vim/bundle/vim-addon-mw-utils"]
+	path = vim/.vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/.vim/bundle/vimwiki"]
+	path = vim/.vim/bundle/vimwiki
+	url = http://github.com/vim-scripts/vimwiki.git
+[submodule "vim/.vim/bundle/vim-signature"]
+	path = vim/.vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "zsh/.zprezto"]
+	path = zsh/.zprezto
+	url = https://github.com/sorin-ionescu/prezto.git

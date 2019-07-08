@@ -43,8 +43,13 @@ fi
 # Command configuration
 
 export EDITOR=vim
+export EDITOR=vim
 export PAGER=less
 export LESS=FRI
+
+if [[ -z $LANG ]]; then
+  export LANG=en_US.UTF-8
+fi
 
 # Development configuration
 

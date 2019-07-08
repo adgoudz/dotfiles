@@ -8,7 +8,7 @@ if command -v pyenv &>/dev/null; then
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
     if command -v pyenv-virtualenv-init &>/dev/null; then
-        PYENV_VIRTUALENV_INIT=$(whence pyenv-virtualenv-init)
+        PYENV_VIRTUALENV_INSTALLED=1
     fi
 fi
 
