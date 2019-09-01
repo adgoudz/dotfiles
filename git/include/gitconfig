@@ -7,9 +7,9 @@
 	username = adgoudz@gmail.com
 	helper = cache --timeout=3600
 [format]
-	pretty = %C(bold magenta)%h%Creset %C(cyan)%<(12,trunc)%an%Creset %<(24)%C(blue)%ad%Creset %<(50,trunc)%s%C(bold red) %d%Creset
+	pretty = %C(white)%h%Creset %C(bold magenta)%<(12,trunc)%an%Creset %<(15)%C(bold yellow)%ad%Creset %<(70,trunc)%s %C(cyan)%d%Creset
 [log]
-	date = local
+	date = human
 [push]
 	default = simple
 [user]

@@ -28,6 +28,6 @@ zstyle ':prezto:module:prompt' theme 'andrew'
 #
 
 # Set a format for oneline log output
-zstyle ':prezto:module:git:log:oneline' format '%C(bold magenta)%h%Creset %C(cyan)%<(12,trunc)%an%Creset %<(24)%C(bold yellow)%ad%Creset %<(70,trunc)%s %C(bold red)%d%Creset'
+zstyle ':prezto:module:git:log:oneline' format '%C(white)%h%Creset %C(bold magenta)%<(12,trunc)%an%Creset %<(15)%C(bold yellow)%ad%Creset %<(70,trunc)%s %C(cyan)%d%Creset'
 
 # vim: ft=zsh
