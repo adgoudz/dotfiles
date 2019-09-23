@@ -19,8 +19,8 @@ path=(/usr/bin $path)
 path=(/usr/sbin $path)
 path=($BREW_PREFIX/bin $path)
 path=($BREW_PREFIX/sbin $path)
-
 path=($SANDBOX/bin $path)
+path=($BREW_PREFIX/opt/python/libexec/bin $path)
 
 # $SHELL might not be set if zsh isn't our default
 # login shell. Make sure it's set before anything
@@ -58,9 +58,6 @@ export BREW_PREFIX
 export VIRTUALENVS_ROOT=$HOME/.local/share/virtualenvs
 export WORKON_HOME=$VIRTUALENVS_ROOT
 
-export PYTHON=$BREW_PREFIX/bin/python2
-export PYTHON_USER_BASE=$($PYTHON -m site --user-base)
-
 export PYTHON3=$BREW_PREFIX/bin/python3
 export PYTHON3_USER_BASE=$($PYTHON3 -m site --user-base)
 
@@ -68,7 +65,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # Development path
 
-path=($PYTHON_USER_BASE/bin $path)   # pip2
 path=($PYTHON3_USER_BASE/bin $path)  # pip3
 
 # Source local configuration
