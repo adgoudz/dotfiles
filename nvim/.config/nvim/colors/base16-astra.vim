@@ -76,12 +76,12 @@ if exists("base16colorspace") && base16colorspace == "256"
   let g:base16_cterm02 = "19"
   let s:cterm04        = "20"
   let g:base16_cterm04 = "20"
-  let s:cterm06        = "21"
-  let g:base16_cterm06 = "21"
+  let s:cterm0F        = "21"
+  let g:base16_cterm0F = "21"
   let s:cterm09        = "16"
   let g:base16_cterm09 = "16"
-  let s:cterm0F        = "17"
-  let g:base16_cterm0F = "17"
+  let s:cterm06        = "17"
+  let g:base16_cterm06 = "17"
 else
   let s:cterm01        = "10"
   let g:base16_cterm01 = "10"
@@ -89,12 +89,12 @@ else
   let g:base16_cterm02 = "11"
   let s:cterm04        = "12"
   let g:base16_cterm04 = "12"
-  let s:cterm06        = "13"
-  let g:base16_cterm06 = "13"
+  let s:cterm0F        = "13"
+  let g:base16_cterm0F = "13"
   let s:cterm09        = "09"
   let g:base16_cterm09 = "09"
-  let s:cterm0F        = "14"
-  let g:base16_cterm0F = "14"
+  let s:cterm06        = "14"
+  let g:base16_cterm06 = "14"
 endif
 
 " Neovim terminal colours
@@ -231,7 +231,7 @@ call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Constant",     s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
-call <sid>hi("Delimiter",    s:gui0F, "", s:cterm0F, "", "", "")
+call <sid>hi("Delimiter",    s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("Function",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Identifier",   s:gui08, "", s:cterm08, "", "none", "")
@@ -243,7 +243,7 @@ call <sid>hi("Operator",     s:gui05, "", s:cterm05, "", "none", "")
 call <sid>hi("PreProc",      s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Repeat",       s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
+call <sid>hi("SpecialChar",  s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Statement",    s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("StorageClass", s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("String",       s:gui0B, "", s:cterm0B, "", "", "")
@@ -367,7 +367,7 @@ call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
 " Ruby highlighting
 call <sid>hi("rubyAttribute",               s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("rubyConstant",                s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("rubyInterpolationDelimiter",  s:gui0F, "", s:cterm0F, "", "", "")
+call <sid>hi("rubyInterpolationDelimiter",  s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("rubyRegexp",                  s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("rubySymbol",                  s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("rubyStringDelimiter",         s:gui0B, "", s:cterm0B, "", "", "")
