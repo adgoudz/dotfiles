@@ -1,11 +1,14 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'tpope/vim-repeat'
 Plug 'qpkorr/vim-bufkill'
@@ -109,4 +112,10 @@ set formatoptions+=l               " Don't format existing long lines
 set formatoptions+=1               " Don't break after single characters
 set formatoptions+=n               " Format numbered lists (requires autoindent)
 set formatoptions+=r               " Insert comment leader after <Enter>
+
+"
+" Plugin Options
+"
+
+let g:airline_powerline_fonts = 1
 
