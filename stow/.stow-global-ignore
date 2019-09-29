@@ -1,5 +1,5 @@
 
-# Override the default global ignore list in share/perl5/Stow.pm
-# to allow stowing a global .gitignore file.
+# Override the default global ignore list in share/perl5/Stow.pm's __DATA__
 
 \.git
+\.gitignore
