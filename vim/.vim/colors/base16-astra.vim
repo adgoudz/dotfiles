@@ -21,8 +21,8 @@ let s:gui01        = "282a2e"
 let g:base16_gui01 = "282a2e"
 let s:gui02        = "373b41"
 let g:base16_gui02 = "373b41"
-let s:gui03        = "657b83"
-let g:base16_gui03 = "657b83"
+let s:gui03        = "839496"
+let g:base16_gui03 = "839496"
 let s:gui04        = "b4b7b4"
 let g:base16_gui04 = "b4b7b4"
 let s:gui05        = "bfd0d2"
@@ -188,15 +188,15 @@ call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
 call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
-call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
+call <sid>hi("IncSearch",     s:gui07, s:gui0C, s:cterm07, s:cterm0C, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("MatchParen",    "", s:gui03, "", s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Search",        s:gui01, s:gui0A, s:cterm01, s:cterm0A,  "", "")
-call <sid>hi("Substitute",    s:gui01, s:gui0A, s:cterm01, s:cterm0A, "none", "")
+call <sid>hi("Search",        s:gui07, s:gui0C, s:cterm07, s:cterm0C,  "", "")
+call <sid>hi("Substitute",    s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
@@ -222,7 +222,7 @@ call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", ""
 call <sid>hi("PMenuSel",      s:gui01, s:gui05, s:cterm01, s:cterm05, "", "")
 call <sid>hi("TabLine",       s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
-call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", "")
+call <sid>hi("TabLineSel",    s:gui06, s:gui01, s:cterm06, s:cterm01, "none", "")
 
 " Standard syntax highlighting
 call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "", "")
@@ -234,32 +234,36 @@ call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
 call <sid>hi("Delimiter",    s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("Function",     s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Identifier",   s:gui08, "", s:cterm08, "", "none", "")
+call <sid>hi("Identifier",   s:gui0D, "", s:cterm0D, "", "none", "")
 call <sid>hi("Include",      s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Keyword",      s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Label",        s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("Number",       s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Label",        s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Number",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Operator",     s:gui05, "", s:cterm05, "", "none", "")
-call <sid>hi("PreProc",      s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("Repeat",       s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("PreProc",      s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("Repeat",       s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Special",      s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("SpecialChar",  s:gui06, "", s:cterm06, "", "", "")
-call <sid>hi("Statement",    s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("StorageClass", s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("String",       s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("Statement",    s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("StorageClass", s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("String",       s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("Structure",    s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Tag",          s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("Todo",         s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
-call <sid>hi("Type",         s:gui0A, "", s:cterm0A, "", "none", "")
-call <sid>hi("Typedef",      s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("Tag",          s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Todo",         s:gui09, s:gui01, s:cterm09, s:cterm01, "", "")
+call <sid>hi("Type",         s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("Typedef",      s:gui09, "", s:cterm09, "", "", "")
+
+" Other syntax highlighting
+" call <sid>hi("helpHeader",       s:gui06, "", s:cterm06, "", "", "")
+" call <sid>hi("helpSectionDelim", s:gui06, "", s:cterm06, "", "", "")
 
 " C highlighting
 call <sid>hi("cOperator",   s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("cPreCondit",  s:gui0E, "", s:cterm0E, "", "", "")
 
 " C# highlighting
-call <sid>hi("csClass",                 s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("csAttribute",             s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("csClass",                 s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("csAttribute",             s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("csModifier",              s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("csType",                  s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("csUnspecifiedStatement",  s:gui0D, "", s:cterm0D, "", "", "")
@@ -284,7 +288,7 @@ call <sid>hi("DiffRemoved",  s:gui08, s:gui00,  s:cterm08, s:cterm00, "", "")
 
 " Git highlighting
 call <sid>hi("gitcommitOverflow",       s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("gitcommitSummary",        s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("gitcommitSummary",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("gitcommitComment",        s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("gitcommitUntracked",      s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("gitcommitDiscarded",      s:gui03, "", s:cterm03, "", "", "")
@@ -293,11 +297,11 @@ call <sid>hi("gitcommitHeader",         s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("gitcommitSelectedType",   s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("gitcommitUnmergedType",   s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("gitcommitDiscardedType",  s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("gitcommitBranch",         s:gui09, "", s:cterm09, "", "bold", "")
-call <sid>hi("gitcommitUntrackedFile",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("gitcommitBranch",         s:gui06, "", s:cterm06, "", "", "")
+call <sid>hi("gitcommitUntrackedFile",  s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("gitcommitUnmergedFile",   s:gui08, "", s:cterm08, "", "bold", "")
-call <sid>hi("gitcommitDiscardedFile",  s:gui08, "", s:cterm08, "", "bold", "")
-call <sid>hi("gitcommitSelectedFile",   s:gui0B, "", s:cterm0B, "", "bold", "")
+call <sid>hi("gitcommitDiscardedFile",  s:gui04, "", s:cterm04, "", "", "")
+call <sid>hi("gitcommitSelectedFile",   s:gui04, "", s:cterm04, "", "", "")
 
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd",     s:gui0B, s:gui01, s:cterm0B, s:cterm01, "", "")
@@ -306,7 +310,7 @@ call <sid>hi("GitGutterDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 call <sid>hi("GitGutterChangeDelete",  s:gui0E, s:gui01, s:cterm0E, s:cterm01, "", "")
 
 " HTML highlighting
-call <sid>hi("htmlBold",    s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("htmlBold",    s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("htmlItalic",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("htmlEndTag",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
@@ -320,25 +324,25 @@ call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("jsClassDefinition",   s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsClassDefinition",   s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassFuncName",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassMethodType",   s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsGlobalObjects",     s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("jsGlobalNodeObjects", s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("jsExceptions",        s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("jsBuiltins",          s:gui09, "", s:cterm09, "", "", "")
 
 " Mail highlighting
-call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("mailQuoted1",  s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("mailQuoted3",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("mailQuoted4",  s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("mailQuoted5",  s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("mailQuoted6",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("mailQuoted6",  s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("mailURL",      s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("mailEmail",    s:gui0D, "", s:cterm0D, "", "", "")
 
@@ -351,6 +355,8 @@ call <sid>hi("markdownHeadingDelimiter",  s:gui0D, "", s:cterm0D, "", "", "")
 " NERDTree highlighting
 call <sid>hi("NERDTreeDirSlash",  s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("NERDTreeExecFile",  s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("NERDTreeLinkFile",  s:gui0E, "", s:cterm0E, "", "", "") " Added
+call <sid>hi("NERDTreeLinkDir",  s:gui0E, "", s:cterm0E, "", "", "") " Added
 
 " PHP highlighting
 call <sid>hi("phpMemberSelector",  s:gui05, "", s:cterm05, "", "", "")
@@ -366,7 +372,7 @@ call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
 
 " Ruby highlighting
 call <sid>hi("rubyAttribute",               s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("rubyConstant",                s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("rubyConstant",                s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("rubyInterpolationDelimiter",  s:gui06, "", s:cterm06, "", "", "")
 call <sid>hi("rubyRegexp",                  s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("rubySymbol",                  s:gui0B, "", s:cterm0B, "", "", "")

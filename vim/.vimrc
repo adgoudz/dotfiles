@@ -28,7 +28,7 @@ autocmd BufWritePre * :EraseBadWhitespace
 set runtimepath+=$DOTFILES  " Point plugins to configuration
 
 call pathogen#infect()
-:helptags
+:Helptags
 
 """""""""""
 " Behavior
