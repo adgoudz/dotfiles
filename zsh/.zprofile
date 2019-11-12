@@ -43,7 +43,6 @@ fi
 # Command configuration
 
 export EDITOR=vim
-export EDITOR=vim
 export PAGER=less
 export LESS=FRI
 
@@ -53,7 +52,7 @@ fi
 
 # Development configuration
 
-export BREW_PREFIX
+export BREW_PREFIX  # from .zshenv
 
 export VIRTUALENVS_ROOT=$HOME/.local/share/virtualenvs
 export WORKON_HOME=$VIRTUALENVS_ROOT

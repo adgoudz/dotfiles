@@ -28,15 +28,14 @@ alias fgrep='find . ! -path "./_*" ! -path "./.git*" ! -type l ! -type d -print0
 alias egrep='printenv | grep'
 alias agrep='alias | grep'
 
-alias gdc='gdca'  # oh-my-zsh
-alias gla='git log --graph'
+function g_() {
+    alias | grep "git $1"
+}
+
+alias gla='git log --topo-order --graph -20 --pretty=format:"${_git_log_oneline_format}"'
 alias glcl='git log --graph --cherry-mark --no-merges --left-only'
 alias glcr='git log --graph --cherry-mark --no-merges --right-only'
-alias gcd='git checkout develop'  # git flow
 alias gcol="git checkout '@{-1}'"
-alias gbv='git branch --verbose'
-alias gcpm='git cherry-pick master'
-alias gsfe='git submodule foreach'
 
 # Miscellaneous shortcuts
 

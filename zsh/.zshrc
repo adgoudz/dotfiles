@@ -56,3 +56,4 @@ include "include/bindings.zsh"
 if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
