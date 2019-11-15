@@ -191,7 +191,7 @@ call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
 call <sid>hi("IncSearch",     s:gui07, s:gui0C, s:cterm07, s:cterm0C, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("MatchParen",    "", s:gui03, "", s:cterm03,  "", "")
+call <sid>hi("MatchParen",    s:gui00, s:gui05, s:cterm00, s:cterm05,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
@@ -224,15 +224,20 @@ call <sid>hi("TabLine",       s:gui03, s:gui01, s:cterm03, s:cterm01, "none", ""
 call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineSel",    s:gui06, s:gui01, s:cterm06, s:cterm01, "none", "")
 
+call <sid>hi("ExtraWhitespace", "", s:gui08, "", s:cterm08, "", "") " Added
+call <sid>hi("NvimInternalError", s:gui00, "", s:cterm00, "", "none", "") " Added
+call <sid>hi("PMenuSbar",     "", "", s:cterm00, "", "none", "") " Added
+call <sid>hi("PMenuThumb",    "", "", s:cterm00, "", "", "") " Added
+
 " Standard syntax highlighting
-call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Boolean",      s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Character",    s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Constant",     s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Constant",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
 call <sid>hi("Delimiter",    s:gui06, "", s:cterm06, "", "", "")
-call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("Float",        s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Function",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Identifier",   s:gui0D, "", s:cterm0D, "", "none", "")
 call <sid>hi("Include",      s:gui0D, "", s:cterm0D, "", "", "")
@@ -253,19 +258,18 @@ call <sid>hi("Todo",         s:gui09, s:gui01, s:cterm09, s:cterm01, "", "")
 call <sid>hi("Type",         s:gui0D, "", s:cterm0D, "", "none", "")
 call <sid>hi("Typedef",      s:gui09, "", s:cterm09, "", "", "")
 
-" Other syntax highlighting
-" call <sid>hi("helpHeader",       s:gui06, "", s:cterm06, "", "", "")
-" call <sid>hi("helpSectionDelim", s:gui06, "", s:cterm06, "", "", "")
+call <sid>hi("helpHeader",       s:gui07, "", s:cterm07, "", "", "") " Added
+call <sid>hi("helpSectionDelim", s:gui07, "", s:cterm07, "", "", "") " Added
 
 " C highlighting
 call <sid>hi("cOperator",   s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("cPreCondit",  s:gui0E, "", s:cterm0E, "", "", "")
 
 " C# highlighting
-call <sid>hi("csClass",                 s:gui09, "", s:cterm09, "", "", "")
-call <sid>hi("csAttribute",             s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("csClass",                 s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("csAttribute",             s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("csModifier",              s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("csType",                  s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("csType",                  s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("csUnspecifiedStatement",  s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("csContextualStatement",   s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("csNewDecleration",        s:gui08, "", s:cterm08, "", "", "")
@@ -318,13 +322,13 @@ call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
 " JavaScript highlighting
 call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
-call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("javaScriptNumber",  s:gui0B, "", s:cterm0B, "", "", "")
 " pangloss/vim-javascript highlighting
 call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("jsClassDefinition",   s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("jsClassDefinition",   s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
@@ -391,10 +395,10 @@ call <sid>hi("SignifySignChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "", "
 call <sid>hi("SignifySignDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 
 " Spelling highlighting
-call <sid>hi("SpellBad",     "", "", "", "", "undercurl", s:gui08)
-call <sid>hi("SpellLocal",   "", "", "", "", "undercurl", s:gui0C)
-call <sid>hi("SpellCap",     "", "", "", "", "undercurl", s:gui0D)
-call <sid>hi("SpellRare",    "", "", "", "", "undercurl", s:gui0E)
+call <sid>hi("SpellBad",     "", "", s:cterm07, "", "undercurl", s:gui08)
+call <sid>hi("SpellLocal",   "", "", s:cterm00, "", "undercurl", s:gui0C)
+call <sid>hi("SpellCap",     "", "", s:cterm00, "", "undercurl", s:gui0D)
+call <sid>hi("SpellRare",    "", "", s:cterm07, "", "undercurl", s:gui0E)
 
 " Startify highlighting
 call <sid>hi("StartifyBracket",  s:gui03, "", s:cterm03, "", "", "")
