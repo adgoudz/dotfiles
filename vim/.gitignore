@@ -1,5 +1,11 @@
-.vim/autoload
+.vim/autoload/*
+!.vim/autoload/airline/
+
+.vim/backup
 .vim/bundle
 .vim/plugged
 .vim/swap
 .vim/tmp
+.vim/undo
+
+.vim/.netrwhist

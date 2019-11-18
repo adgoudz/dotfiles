@@ -3,7 +3,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
-source ~/.vimrc.nvim
+source ~/.vimrc
 
 " tpope/vim-fugitive
 " tpope/vim-surround
@@ -19,6 +19,8 @@ source ~/.vimrc.nvim
 " dense-analysis/ale
 " easymotion/vim-easymotion
 " mhinz/vim-startify
+" tpope/vim-obsession
+" wesQ3/vim-windowswap
 "
 " Shougo/deoplete.nvim
 " neoclide/coc.nvia/completor.vim
