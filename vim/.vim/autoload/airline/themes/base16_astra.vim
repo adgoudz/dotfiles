@@ -81,15 +81,11 @@ let g:airline#themes#base16_astra#palette.insert_paste = s:paste
 let g:airline#themes#base16_astra#palette.replace_paste = s:paste
 let g:airline#themes#base16_astra#palette.visual_paste = s:paste
 
-" Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp
-" variable so that related functionality is loaded iff the user is using
-" ctrlp. Note that this is optional, and if you do not define ctrlp colors
-" they will be chosen automatically from the existing palette.
-" if !get(g:, 'loaded_ctrlp', 0)
-"   finish
-" endif
-" let g:airline#themes#base16_astra#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
-"       \ [ s:gui07, s:gui02, s:cterm07, s:cterm02, '' ],
-"       \ [ s:gui07, s:gui04, s:cterm07, s:cterm04, '' ],
-"       \ [ s:gui05, s:gui01, s:cterm05, s:cterm01, 'bold' ])
-"
+let g:airline#themes#base16_astra#palette.accents = {}
+let g:airline#themes#base16_astra#palette.accents.red =    [ s:gui08 , '' , s:cterm08  , '' ]
+let g:airline#themes#base16_astra#palette.accents.green =  [ s:gui0B , '' , s:cterm0B  , '' ]
+let g:airline#themes#base16_astra#palette.accents.blue =   [ s:gui0D , '' , s:cterm0D  , '' ]
+let g:airline#themes#base16_astra#palette.accents.yellow = [ s:gui0A , '' , s:cterm0A  , '' ]
+let g:airline#themes#base16_astra#palette.accents.orange = [ s:gui09 , '' , s:cterm09  , '' ]
+let g:airline#themes#base16_astra#palette.accents.purple = [ s:gui0E , '' , s:cterm0E  , '' ]
+
