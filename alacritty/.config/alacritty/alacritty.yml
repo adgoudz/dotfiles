@@ -1,0 +1,55 @@
+
+
+window:
+  dimensions:
+    columns: 285
+    lines: 84
+
+  padding:
+    y: 2
+    x: 2
+
+  title: ''
+
+# Font configuration
+font:
+  normal:
+    family: DejaVuSansMono Nerd Font
+
+  size: 11.0
+
+# Colors (Base16 Astra)
+colors:
+  primary:
+    background: '0x1d1d1d'
+    foreground: '0xbfd0d2'
+
+  selection:
+    text: '0xffffff'
+    background: '0x8abeb7'
+
+  cursor:
+    text: '0xbfd0d2'
+    cursor: '0xbfd0d2'
+
+  normal:
+    black:   '0x1d1d1d'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xbfd0d2'
+
+  bright:
+    black:   '0x839496'
+    red:     '0xde935f'
+    green:   '0x282a2e'
+    yellow:  '0x373b41'
+    blue:    '0xb4b7b4'
+    magenta: '0x9867aa'
+    cyan:    '0xfdf6e3'
+    white:   '0xffffff'
+
+alt_send_esc: true
