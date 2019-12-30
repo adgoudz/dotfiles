@@ -16,7 +16,7 @@ module.exports = {
     padding: '2px 6px',
 
     colors: {
-      black: '#1d1f21',         // base00
+      black: '#1d1d1d',         // base00
       red: '#cc6666',           // base08
       green: '#b5bd68',         // base0B
       yellow: '#f0c674',        // base0A
@@ -24,7 +24,7 @@ module.exports = {
       magenta: '#b294bb',       // base0E
       cyan: '#8abeb7',          // base0C
       white: '#bfd0d2',         // base05
-      lightBlack: '#657b83',    // base03
+      lightBlack: '#839496',    // base03
       lightRed: '#de935f',      // base09
       lightGreen: '#282a2e',    // base01
       lightYellow: '#373b41',   // base02
@@ -52,11 +52,11 @@ module.exports = {
       // lightwhite: '#ffffff',    // base07
 
     foregroundColor: '#bfd0d2',
-    backgroundColor: '#1d1f21',
+    backgroundColor: '#1d1d1d',
     selectionColor: '#8abeb7',
-    borderColor: '#1d1f21',
-    cursorColor: '#c5c8c6',
-    cursorAccentColor: '#000000',
+    borderColor: '#1d1d1d',
+    cursorColor: '#bfd0d2',
+    cursorAccentColor: '#1d1d1d',
 
     windowSize: [1860, 1120],
     showWindowControls: false,
