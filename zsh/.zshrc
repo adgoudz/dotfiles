@@ -42,11 +42,13 @@ export CLICOLOR=1
 
 export GPG_TTY=$(tty)
 
-# Source shared configuration
+# Source local configuration
 
-if [[ -e "${ZDOTDIR:-$HOME}/.zinclude" ]]; then
-    include "${ZDOTDIR:-$HOME}/.zinclude/zshrc"
+if [[ -e "$LOCAL_DOTFILES/zsh/include/zshrc" ]]; then
+    include "$LOCAL_DOTFILES/zsh/include/zshrc"
 fi
+
+# Source shared configuration
 
 include "include/aliases.zsh"
 include "include/bindings.zsh"

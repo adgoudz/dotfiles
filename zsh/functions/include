@@ -14,7 +14,7 @@ function {
     # LOCAL_OPTIONS is set here so that we can customize options without
     # interfering with the options set by the current shell. We need to do
     # this in an anonymous function, otherwise LOCAL_OPTIONS will still be
-    # during the execution of the file(s) that are sourced below.
+    # set during the execution of the file(s) that are sourced below.
     setopt localoptions
 
     # Enable GLOB_SUBST to allow filename patterns as arguments to the

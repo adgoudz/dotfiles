@@ -1,6 +1,8 @@
 
 SANDBOX=$HOME/Sandbox
+
 DOTFILES=$SANDBOX/dotfiles
+LOCAL_DOTFILES=$HOME/.local/dotfiles
 
 BREW_PREFIX=/usr/local
 

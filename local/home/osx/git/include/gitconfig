@@ -1,0 +1,8 @@
+[user]
+	name = Andrew Goudzwaard
+	email = adgoudz@gmail.com
+[core]
+	excludesfile = /Users/Andrew/Sandbox/dotfiles/gitignore
+	pager = less -SXE
+
+# vim: ft=gitconfig

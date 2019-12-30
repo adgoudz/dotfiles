@@ -1,0 +1,11 @@
+[credential "https://github.com"]
+	username = adgoudz@gmail.com
+	helper = store
+[branch "master"]
+	mergeoptions = --no-ff --no-commit
+[format]
+	pretty = %C(white)%h%Creset %C(bold magenta)%<(12,trunc)%an%Creset %<(15)%C(bold yellow)%ad%Creset %<(70,trunc)%s %C(cyan)%d%Creset
+[log]
+	date = human
+[include]
+    path = ~/.local/dotfiles/git/include/gitconfig
