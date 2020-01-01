@@ -72,8 +72,8 @@ key_bindings:
 
   - { key: Home, chars: "\x1bOF" } # Defaults to ^[[F
   - { key: End, chars: "\x1bOH" } # Defaults to ^[[H
-  - { key: Left, mods: Command, chars: "\x1bOF" } # Home
-  - { key: Right, mods: Command, chars: "\x1bOH" } # End
+  - { key: Left, mods: Command, chars: "\x1bOH" } # Home
+  - { key: Right, mods: Command, chars: "\x1bOF" } # End
   - { key: LBracket, mods: Shift|Command, chars: "\x1b{" }
   - { key: RBracket, mods: Shift|Command, chars: "\x1b}" }
 
