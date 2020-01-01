@@ -7,6 +7,7 @@ alias dotfiles='cd $DOTFILES'
 alias bin='cd $SANDBOX/bin'
 alias installs='cd $SANDBOX/installs'
 alias repos='cd $SANDBOX/repos'
+alias src='cd $SANDBOX/src'
 
 alias userbase='cd $PYTHON_USER_BASE'
 alias userbase3='cd $PYTHON3_USER_BASE'
@@ -16,6 +17,8 @@ alias venvs='cd $VIRTUALENVS_ROOT'
 
 alias pwd='pwd -P'
 alias cwd='cd $(pwd -P)'
+
+alias vim='nvim'
 
 # Command shortcuts
 
