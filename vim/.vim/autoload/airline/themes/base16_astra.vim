@@ -46,6 +46,10 @@ else
   let s:cterm06 = 14
 endif
 
+"
+" Section Themes
+"
+
 let s:normal_a = [ s:gui07, s:gui0D, s:cterm07, s:cterm0D ]
 let s:normal_b = [ s:gui04, s:gui01, s:cterm04, s:cterm01 ]
 let s:normal_c = [ s:gui04, s:gui00, s:cterm04, s:cterm00 ]
@@ -71,15 +75,46 @@ let s:inactive_b = [ s:gui03, s:gui01, s:cterm03, s:cterm01 ]
 let s:inactive_c = [ s:gui03, s:gui01, s:cterm03, s:cterm01 ]
 let g:airline#themes#base16_astra#palette.inactive = airline#themes#generate_color_map(s:inactive_a, s:inactive_b, s:inactive_c)
 
+" The following is borrowed from airline#themes#patch. The
+" best way to override the colors added there is to set
+" them in advance.
+
+for mode in keys(g:airline#themes#base16_astra#palette)
+  if mode == 'accents'
+    continue
+  endif
+  if !has_key(g:airline#themes#base16_astra#palette[mode], 'airline_warning')
+    let g:airline#themes#base16_astra#palette[mode]['airline_warning'] = [ s:gui07, s:gui09, s:cterm07, s:cterm09 ]
+  endif
+  if !has_key(g:airline#themes#base16_astra#palette[mode], 'airline_error')
+    let g:airline#themes#base16_astra#palette[mode]['airline_error'] = [ s:gui07, s:gui08, s:cterm07, s:cterm08 ]
+  endif
+  if !has_key(g:airline#themes#base16_astra#palette[mode], 'airline_term')
+    let g:airline#themes#base16_astra#palette[mode]['airline_term'] = s:normal_c
+  endif
+endfor
+
+"
+" Theme Overrides
+"
+
 let s:paste = {
-    \ 'airline_a': [ s:gui00, s:gui07, s:cterm00, s:cterm07 ],
-    \ 'airline_z': [ s:gui00, s:gui07, s:cterm00, s:cterm07 ]
-    \ }
+      \ 'airline_a': [ s:gui00, s:gui07, s:cterm00, s:cterm07 ],
+      \ 'airline_z': [ s:gui00, s:gui07, s:cterm00, s:cterm07 ]
+      \ }
 
 let g:airline#themes#base16_astra#palette.normal_paste = s:paste
 let g:airline#themes#base16_astra#palette.insert_paste = s:paste
 let g:airline#themes#base16_astra#palette.replace_paste = s:paste
 let g:airline#themes#base16_astra#palette.visual_paste = s:paste
+
+let g:airline#themes#base16_astra#palette.tabline = {}
+let g:airline#themes#base16_astra#palette.tabline.airline_tabmod = s:normal_a
+let g:airline#themes#base16_astra#palette.tabline.airline_tabmod_right = s:normal_a
+
+"
+" Accents
+"
 
 let g:airline#themes#base16_astra#palette.accents = {}
 let g:airline#themes#base16_astra#palette.accents.red =    [ s:gui08 , '' , s:cterm08  , '' ]

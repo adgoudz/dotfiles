@@ -149,6 +149,8 @@ let g:airline_theme = 'base16_astra'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
+let g:airline#extensions#ctrlp#color_template = 'normal'
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        " Tab number only
 let g:airline#extensions#tabline#show_close_button = 0
@@ -171,6 +173,7 @@ let g:airline_symbols.maxlinenr = ''
 call airline#parts#define_accent('mode', 'none')
 call airline#parts#define_accent('linenr', 'none')
 call airline#parts#define_accent('maxlinenr', 'none')
+call airline#parts#define_accent('terminal', 'none')
 
 " Use the ,+ style of the modified flag
 call airline#parts#define_raw('file', '%f%M')
