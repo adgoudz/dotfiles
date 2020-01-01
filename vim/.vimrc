@@ -136,6 +136,7 @@ call plug#begin(g:plugdir)
   Plug 'scrooloose/nerdcommenter'
 
   Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
   Plug 'qpkorr/vim-bufkill'
   Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
@@ -229,19 +230,22 @@ let g:tagbar_map_jump = 'o'          " And instead map it to jump to tags
 " Mappings {{{
 "
 
-map <F10> :echo 'hi<' . synIDattr(synID(line('.'),col('.'),1),'name') . '> trans<' . synIDattr(synID(line('.'),col('.'),0),'name') . '> lo<' . synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name') . '>'<CR>
-
-:nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
-:nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
-
-" Make it easy to escape insert mode
-:inoremap jk <esc>
-
 " Support xterm modifiers under tmux (mapped keys only)
 if &term =~ '^screen'
     set <xRight>=[1;*C
     set <xLeft>=[1;*D
 endif
+
+" View the highlightgroup for the character under the cursor
+map <F10> :echo 'hi<' . synIDattr(synID(line('.'),col('.'),1),'name') . '> trans<' . synIDattr(synID(line('.'),col('.'),0),'name') . '> lo<' . synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name') . '>'<CR>
+
+" Source or edit ~/.vimrc
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Make it easy to escape insert mode
+inoremap jk <esc>
+tnoremap jk <C-\><C-n>
 
 " Line navigation
 noremap H ^
@@ -251,24 +255,12 @@ noremap L $
 nnoremap K vwhd
 
 " Moving lines
-if !has('nvim')
-    nnoremap <silent> { :m .+1==
-    nnoremap <silent> } :m .-2==
-    inoremap <silent> { :m .+1==gi
-    inoremap <silent> } :m .-2==gi
-    vnoremap <silent> { :m '>+gv=gv
-    vnoremap <silent> } :m .-2gv=gv
-else
-    nnoremap <silent> <M-{> :m .+1<CR>==
-    nnoremap <silent> <M-}> :m .-2<CR>==
-    inoremap <silent> <M-{> :m .+1\<CR>==gi
-    inoremap <silent> <M-}> :m .-2\<CR>==gi
-    vnoremap <silent> <M-{> :m '>+1<CR>gv=gv
-    vnoremap <silent> <M-}> :m .-2<CR>gv=gv
-endif
-
-" Macros
-nnoremap <Space> @q
+nnoremap <silent> <M-{> :m .+1<CR>==
+nnoremap <silent> <M-}> :m .-2<CR>==
+inoremap <silent> <M-{> <Esc>:m .+1\<CR>==gi
+inoremap <silent> <M-}> <Esc>:m .-2\<CR>==gi
+vnoremap <silent> <M-{> :m '>+1<CR>gv=gv
+vnoremap <silent> <M-}> :m .-2<CR>gv=gv
 
 " Window navigation
 nnoremap <C-H> <C-W>h
@@ -283,13 +275,13 @@ nnoremap <silent> <Home> :tabp<CR>
 nnoremap <silent> <End> :tabn<CR>
 
 " Buffer switching
-if !has('nvim')
-    nnoremap <silent> <A-Left> :bN!<CR>
-    nnoremap <silent> <A-Right> :bn!<CR>
-else
-    nnoremap <silent> <M-Left> :bN!<CR>
-    nnoremap <silent> <M-Right> :bn!<CR>
-endif
+nnoremap <silent> <M-Left> :bN!<CR>
+nnoremap <silent> <M-b> :bN!<CR>
+nnoremap <silent> <M-Right> :bn!<CR>
+nnoremap <silent> <M-f> :bn!<CR>
+
+" Macros
+nnoremap <Space> @q
 
 " Options
 nnoremap <silent> <leader>nu :set nu!<CR>
@@ -302,6 +294,7 @@ nmap <silent> <leader>tb :TagbarToggle<CR>
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
 nmap <silent> <leader>nf :NERDTreeFind<CR>
 nmap <silent> <leader>ws :StripWhitespace<CR>
+nmap <silent> <leader>ts :ToggleWhitespace<CR>
 
 " }}}
 "
