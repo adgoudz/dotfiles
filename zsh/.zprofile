@@ -54,6 +54,8 @@ fi
 
 export BREW_PREFIX  # from .zshenv
 
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/.ripgreprc
+
 export VIRTUALENVS_ROOT=$HOME/.local/share/virtualenvs
 export WORKON_HOME=$VIRTUALENVS_ROOT
 
