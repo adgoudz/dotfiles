@@ -1,9 +1,14 @@
 
+alt_send_esc: true
+
+draw_bold_text_with_bright_colors: false
+
+live_config_reload: true
 
 window:
   dimensions:
-    columns: 285
-    lines: 84
+    columns: 282
+    lines: 80
 
   padding:
     y: 2
@@ -15,8 +20,17 @@ window:
 font:
   normal:
     family: DejaVuSansMono Nerd Font
+    style: Book
+
+  bold:
+    style: Book # Always ignore bold
 
   size: 11.0
+
+  offset:
+    y: 1
+
+  use_thin_strokes: true
 
 # Colors (Base16 Astra)
 colors:
@@ -25,11 +39,11 @@ colors:
     foreground: '0xbfd0d2'
 
   selection:
-    text: '0xffffff'
+    text:       '0xffffff'
     background: '0x8abeb7'
 
   cursor:
-    text: '0xbfd0d2'
+    text:   '0xbfd0d2'
     cursor: '0xbfd0d2'
 
   normal:
@@ -52,4 +66,66 @@ colors:
     cyan:    '0xfdf6e3'
     white:   '0xffffff'
 
-alt_send_esc: true
+key_bindings:
+  # When mapping keys with the Control modifier, see here for hex equivalents:
+  # https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls
+
+  - { key: Home, chars: "\x1bOF" } # Defaults to ^[[F
+  - { key: End, chars: "\x1bOH" } # Defaults to ^[[H
+  - { key: Left, mods: Command, chars: "\x1bOF" } # Home
+  - { key: Right, mods: Command, chars: "\x1bOH" } # End
+  - { key: LBracket, mods: Shift|Command, chars: "\x1b{" }
+  - { key: RBracket, mods: Shift|Command, chars: "\x1b}" }
+
+    # Shell
+  - { key: F, mods: Alt,     chars: "\x1bf" }
+  - { key: F, mods: Command, chars: "\x1bf" }
+  - { key: B, mods: Alt,     chars: "\x1bb" }
+  - { key: B, mods: Command, chars: "\x1bb" }
+  - { key: Period, mods: Alt,     chars: "\x1b." }
+  - { key: Period, mods: Command, chars: "\x1b." }
+
+    # Tmux
+  - { key: H, mods: Alt,     chars: "\x1bh" }
+  - { key: H, mods: Command, chars: "\x1bh" } # Overrides Hide
+  - { key: K, mods: Alt,     chars: "\x1bk" }
+  - { key: K, mods: Command, chars: "\x1bk" } # Overrides ClearHistory
+  - { key: W, mods: Alt,     chars: "\x1bw" }
+  - { key: W, mods: Command, chars: "\x1bw" } # Overrides Quit
+  - { key: J, mods: Alt,     chars: "\x1bj" }
+  - { key: J, mods: Command, chars: "\x1bj" }
+  - { key: L, mods: Alt,     chars: "\x1bl" }
+  - { key: L, mods: Command, chars: "\x1bl" }
+  - { key: N, mods: Alt,     chars: "\x1bn" }
+  - { key: N, mods: Command, chars: "\x1bn" }
+  - { key: O, mods: Alt,     chars: "\x1bo" }
+  - { key: O, mods: Command, chars: "\x1bo" }
+  - { key: P, mods: Alt,     chars: "\x1bp" }
+  - { key: P, mods: Command, chars: "\x1bp" }
+  - { key: S, mods: Alt,     chars: "\x1bs" }
+  - { key: S, mods: Command, chars: "\x1bs" }
+  - { key: Key1, mods: Alt,     chars: "\x1b1" }
+  - { key: Key1, mods: Command, chars: "\x1b1" }
+  - { key: Key2, mods: Alt,     chars: "\x1b2" }
+  - { key: Key2, mods: Command, chars: "\x1b2" }
+  - { key: Key3, mods: Alt,     chars: "\x1b3" }
+  - { key: Key3, mods: Command, chars: "\x1b3" }
+  - { key: Key4, mods: Alt,     chars: "\x1b4" }
+  - { key: Key4, mods: Command, chars: "\x1b4" }
+  - { key: Key5, mods: Alt,     chars: "\x1b5" }
+  - { key: Key5, mods: Command, chars: "\x1b5" }
+  - { key: Key6, mods: Alt,     chars: "\x1b6" }
+  - { key: Key6, mods: Command, chars: "\x1b6" }
+  - { key: Key7, mods: Alt,     chars: "\x1b7" }
+  - { key: Key7, mods: Command, chars: "\x1b7" }
+  - { key: Key8, mods: Alt,     chars: "\x1b8" }
+  - { key: Key8, mods: Command, chars: "\x1b8" }
+  - { key: Key9, mods: Alt,     chars: "\x1b9" }
+  - { key: Key9, mods: Command, chars: "\x1b9" }
+  - { key: LBracket, mods: Alt,     chars: "\x1b[" }
+  - { key: LBracket, mods: Command, chars: "\x1b[" }
+  - { key: RBracket, mods: Alt,     chars: "\x1b]" }
+  - { key: RBracket, mods: Command, chars: "\x1b]" }
+  - { key: Space, mods: Alt,     chars: "\x00" }
+  - { key: Space, mods: Control, chars: "\x00" }
+

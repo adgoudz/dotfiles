@@ -1,3 +1,3 @@
 
-# Use to emacs keymap
+# Use emacs keymap
 bindkey -e
