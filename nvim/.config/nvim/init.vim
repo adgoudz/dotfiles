@@ -6,8 +6,6 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 " tpope/vim-fugitive
-" tpope/vim-surround
-" altercation/vim-colors-solarized
 " honza/vim-snippets
 " kshenoy/vim-signature
 " sirver/ultisnips (vim-snipmate)
