@@ -44,7 +44,7 @@ fi
 
 export EDITOR=vim
 export PAGER=less
-export LESS=FRI
+export LESS=FRIX
 
 if [[ -z $LANG ]]; then
   export LANG=en_US.UTF-8
