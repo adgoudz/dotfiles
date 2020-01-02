@@ -48,6 +48,6 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Set a format for oneline log output
 zstyle ':prezto:module:git:log:oneline' format \
-    '%C(white)%h%Creset %C(magenta)%<(12,trunc)%an%Creset %<(15)%C(bold black)%ad%Creset %<(70,trunc)%s %C(cyan)%d%Creset'
+    '%C(7)%h%Creset %C(5)%<(12,trunc)%an%Creset %<(15)%C(8)%ad%Creset %<(70,trunc)%s %C(6)%d%Creset'
 
 # vim: ft=zsh

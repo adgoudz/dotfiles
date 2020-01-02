@@ -4,8 +4,8 @@
 [branch "master"]
 	mergeoptions = --no-ff --no-commit
 [format]
-	pretty = %C(white)%h%Creset %C(bold magenta)%<(12,trunc)%an%Creset %<(15)%C(bold yellow)%ad%Creset %<(70,trunc)%s %C(cyan)%d%Creset
+	pretty = %C(7)%h%Creset %C(5)%<(12,trunc)%an%Creset %<(15)%C(8)%ad%Creset %<(70,trunc)%s %C(6)%d%Creset
 [log]
 	date = human
 [include]
-    path = ~/.local/dotfiles/git/include/gitconfig
+	path = ~/.local/dotfiles/git/include/gitconfig
