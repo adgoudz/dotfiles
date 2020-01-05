@@ -11,8 +11,8 @@ window:
     lines: 80
 
   padding:
-    y: 2
-    x: 2
+    y: 1
+    x: 1
 
   title: ''
 
@@ -26,9 +26,6 @@ font:
     style: Book # Always ignore bold
 
   size: 11.0
-
-  offset:
-    y: 1
 
   use_thin_strokes: true
 
