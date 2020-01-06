@@ -139,6 +139,8 @@ call plug#begin(g:plugdir)
   Plug 'tpope/vim-surround'
   Plug 'qpkorr/vim-bufkill'
   Plug 'ntpeters/vim-better-whitespace'
+
+  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " }}}
@@ -213,6 +215,9 @@ let g:tagbar_width = 32              " Decrease from 40
 let g:tagbar_map_togglefold = 'za'   " Unmap 'o' for toggling folds
 let g:tagbar_map_jump = 'o'          " And instead map it to jump to tags
 
+let g:tmux_navigator_disable_when_zoomed = 1
+
+"
 " Left to configure:
 "   * nerdcommenter
 "   * better-whitespace
