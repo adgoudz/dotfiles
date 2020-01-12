@@ -1,6 +1,6 @@
 
 augroup vimrc
-    autocmd!
+  autocmd!
 augroup END
 
 "
@@ -8,69 +8,73 @@ augroup END
 "
 
 if !has('nvim')
-    set nocompatible                " Turn off compatibility mode
+  let g:plugdir='~/.vim/plugged'
 
-    set backupdir=~/.vim/backup
-    set undodir=~/.vim/undo
-    set directory=~/.vim/swap
-    set history=10000               " Save the maximum number of commands in history
-    set sessionoptions-=options     " Exclude options from saved sessions
-    set tags=./tags;,tags           " Search for tags files recursively from the current file's directora
-    set viminfo+=!                  " Save uppercase global variables
+  set nocompatible                " Turn off compatibility mode
 
-    set belloff=all
-    set nofsync                     " Don't flush on each write
-    set ttimeout                    " Time out on key codes in addition to mappings
-    set ttimeoutlen=50              " Time in ms to wait for a key code sequence to complete (defaults to timeoutlen/1000)
-    set ttyfast
+  set backupdir=~/.vim/backup
+  set undodir=~/.vim/undo
+  set directory=~/.vim/swap
+  set history=10000               " Save the maximum number of commands in history
+  set sessionoptions-=options     " Exclude options from saved sessions
+  set tags=./tags;,tags           " Search for tags files recursively from the current file's directora
+  set viminfo+=!                  " Save uppercase global variables
 
-    set background=dark             " Use dark foreground colors
-    set laststatus=2                " Always display status line
-    set shortmess+=F                " Don't show file info when editing
-    set showcmd                     " Show partial commands in status line
-    set sidescroll=1                " Scroll horizontally rather than re-centering on cursor
-    set tabpagemax=50
-    set wildmenu
+  set belloff=all
+  set nofsync                     " Don't flush on each write
+  set ttimeout                    " Time out on key codes in addition to mappings
+  set ttimeoutlen=50              " Time in ms to wait for a key code sequence to complete (defaults to timeoutlen/1000)
+  set ttyfast
 
-    set autoindent                  " Copy indent when inserting new line
-    set backspace=indent,eol,start  " Backspace over autoindent, line breaks, start of insert
-    set complete-=i                 " Exclude current/included files from completion
-    set nrformats=bin,hex           " Exclude octal numbers from C-[XA] operations
-    set smarttab                    " Tab inserts shiftwidth at beginning of line, tabstop elsewhere
+  set background=dark             " Use dark foreground colors
+  set laststatus=2                " Always display status line
+  set shortmess+=F                " Don't show file info when editing
+  set showcmd                     " Show partial commands in status line
+  set sidescroll=1                " Scroll horizontally rather than re-centering on cursor
+  set tabpagemax=50
+  set wildmenu
 
-    set formatoptions=t             " Format text
-    set formatoptions=c             " Format comments
-    set formatoptions=q             " Allow formatting of comments with gq
-    set formatoptions=j             " Remove comment leaders when joining lines
+  set autoindent                  " Copy indent when inserting new line
+  set backspace=indent,eol,start  " Backspace over autoindent, line breaks, start of insert
+  set complete-=i                 " Exclude current/included files from completion
+  set nrformats=bin,hex           " Exclude octal numbers from C-[XA] operations
+  set smarttab                    " Tab inserts shiftwidth at beginning of line, tabstop elsewhere
 
-    set display=lastline            " Handle long lines and message scrolling
-    set hlsearch                    " Highlight all search matches
-    set incsearch                   " Highlight searches while typing
+  set formatoptions=t             " Format text
+  set formatoptions=c             " Format comments
+  set formatoptions=q             " Allow formatting of comments with gq
+  set formatoptions=j             " Remove comment leaders when joining lines
 
-    " Removed in nvim
-    set maxmem=2000000              " Max limit
-    set maxmemtot=2000000           " Max limit
+  set display=lastline            " Handle long lines and message scrolling
+  set hlsearch                    " Highlight all search matches
+  set incsearch                   " Highlight searches while typing
 
-    " Create directories if needed
-    for s:f in ['backup', 'undo', 'swap']
-        if !isdirectory(expand('~/.vim/' . s:f))
-            exe 'silent !mkdir ' . expand('~/.vim/' . s:f)
-        endif
-    endfor
+  " Removed in nvim
+  set maxmem=2000000              " Max limit
+  set maxmemtot=2000000           " Max limit
 
-    " Ignored from nvim
-    " - encoding (uses $LANG)
-    " - csscopeverbose
-    " - langremap
-    " - langnoremap
-    " - listchars
-    " - ruler (superceded by powerline)
-    " - softtabstop (vim already defaults to 0)
+  " Create directories if needed
+  for s:f in ['undo', 'swap']
+    if !isdirectory(expand('~/.vim/' . s:f))
+      exe mkdir(expand('~/.vim/' . s:f), 'p')
+    endif
+  endfor
+
+  " Ignored from nvim
+  " - encoding (uses $LANG)
+  " - csscopeverbose
+  " - langremap
+  " - langnoremap
+  " - listchars
+  " - ruler (superceded by powerline)
+  " - softtabstop (vim already defaults to 0)
 else
-    set backupdir-=.  " Don't use current directory
-    set noautoread    " Don't reload files when changed outside of nvim
+  let g:plugdir=stdpath('data') . '/plugged'
 
-    set guicursor=    " Don't use bars for cursors
+  set backupdir-=.  " Don't use current directory
+  set noautoread    " Don't reload files when changed outside of nvim
+
+  set guicursor=    " Don't use bars for cursors
 endif
 
 " }}}
@@ -117,30 +121,30 @@ set formatoptions+=r      " Insert comment leader after <Enter>
 
 " }}}
 "
-" Plugins {{{
+" Initialization {{{
 "
 
-if !has('nvim')
-    let g:plugdir='~/.vim/plugged'
-else
-    let g:plugdir=stdpath('data') . '/plugged'
+" Backupdir is never auto-created
+if !isdirectory(&backupdir)
+  call mkdir(&backupdir, 'p')
 endif
 
+" Plugins
 call plug#begin(g:plugdir)
-  Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'qpkorr/vim-bufkill'
-  Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'qpkorr/vim-bufkill'
+Plug 'ntpeters/vim-better-whitespace'
 
-  Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " }}}
@@ -166,7 +170,7 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#wordcount#enabled = 0
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 
 let g:airline_symbols.linenr = ' '
@@ -185,18 +189,18 @@ call airline#parts#define_raw('file', '%f%M')
 call airline#parts#define('linenr', {'raw': '%{g:airline_symbols.linenr}%l'})
 
 function! s:AirlineInit()
-    let l:spc = g:airline_symbols.space
+  let l:spc = g:airline_symbols.space
 
-    " Exclude left-padding in statusline fragments
-    if airline#util#winwidth() > 79
-        let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%'.l:spc, 'linenr', 'maxlinenr', l:spc.': %v'])
-    else
-        let g:airline_section_z = airline#section#create(['%p%%'.l:spc, 'linenr',  ':%v'])
-    endif
+  " Exclude left-padding in statusline fragments
+  if airline#util#winwidth() > 79
+    let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%'.l:spc, 'linenr', 'maxlinenr', l:spc.': %v'])
+  else
+    let g:airline_section_z = airline#section#create(['%p%%'.l:spc, 'linenr',  ':%v'])
+  endif
 endfunction
 
 augroup vimrc
-    autocmd User AirlineAfterInit call s:AirlineInit()
+  autocmd User AirlineAfterInit call s:AirlineInit()
 augroup END
 
 let g:strip_whitespace_on_save = 1
@@ -237,8 +241,8 @@ let g:tmux_navigator_disable_when_zoomed = 1
 
 " Support xterm modifiers under tmux (mapped keys only)
 if &term =~ '^screen'
-    set <xRight>=[1;*C
-    set <xLeft>=[1;*D
+  set <xRight>=[1;*C
+  set <xLeft>=[1;*D
 endif
 
 " View the highlightgroup for the character under the cursor
