@@ -239,8 +239,8 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " Mappings {{{
 "
 
-" Support xterm modifiers under tmux (mapped keys only)
-if &term =~ '^screen'
+" Support xterm modifiers under tmux (vim only)
+if !has('nvim') && &term =~ '^screen'
   set <xRight>=[1;*C
   set <xLeft>=[1;*D
 endif
@@ -252,8 +252,11 @@ map <F10> :echo 'hi<' . synIDattr(synID(line('.'),col('.'),1),'name') . '> trans
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" Make it easy to escape insert mode
-inoremap jk <esc>
+" Open a terminal
+nnoremap <C-W>t :terminal<CR>
+
+" Make it easy to escape insert mode (and write)
+inoremap <silent> jk <Esc>:w<CR>
 tnoremap jk <C-\><C-n>
 
 " Line navigation
