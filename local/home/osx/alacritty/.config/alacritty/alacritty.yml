@@ -23,8 +23,8 @@ live_config_reload: true
 
 window:
   dimensions:
-    columns: 282
-    lines: 80
+    columns: 285
+    lines: 85
 
   padding:
     y: 1
@@ -32,7 +32,6 @@ window:
 
   title: ''
 
-# Font configuration
 font:
   normal:
     family: DejaVuSansMono Nerd Font
@@ -45,7 +44,6 @@ font:
 
   use_thin_strokes: true
 
-# Colors (Base16 Astra)
 colors:
   primary:
     background: '0x1d1d1d'
