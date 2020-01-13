@@ -29,14 +29,18 @@ fi
 
 autoload -U ${fpath[1]}/*(:t)
 
+# Shell configuration
+
+export CLICOLOR=1
+
 # Command configuration
 
 export MANPATH=$BREW_PREFIX/share/man:
 export INFOPATH=$BREW_PREFIX/share/info:
 
-# Shell configuration
-
-export CLICOLOR=1
+if [[ -e ${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh ]]; then
+    include "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh"
+fi
 
 # Agent configuration
 
@@ -56,6 +60,6 @@ include "include/bindings.zsh"
 # Prezto
 
 if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
