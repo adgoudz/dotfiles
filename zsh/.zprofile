@@ -52,7 +52,7 @@ fi
 
 # Development configuration
 
-export BREW_PREFIX  # from .zshenv
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/.ripgreprc
 
