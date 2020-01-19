@@ -196,7 +196,7 @@ function! s:AirlineInit()
 
   " Exclude left-padding in statusline fragments
   if airline#util#winwidth() > 79
-    let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%'.l:spc, 'linenr', 'maxlinenr', l:spc.': %v'])
+    let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%'.l:spc, 'linenr', 'maxlinenr', l:spc.' %v'])
   else
     let g:airline_section_z = airline#section#create(['%p%%'.l:spc, 'linenr',  ':%v'])
   endif
