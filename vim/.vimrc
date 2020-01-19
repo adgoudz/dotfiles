@@ -141,6 +141,7 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 Plug 'qpkorr/vim-bufkill'
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -157,6 +158,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
 let g:airline#extensions#ctrlp#color_template = 'normal'
+
+let g:airline#extensions#obsession#indicator_text = 'ﴖ'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        " Tab number only
