@@ -38,10 +38,6 @@ export CLICOLOR=1
 export MANPATH=$BREW_PREFIX/share/man:
 export INFOPATH=$BREW_PREFIX/share/info:
 
-if [[ -e ${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh ]]; then
-    include "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh"
-fi
-
 # Agent configuration
 
 export GPG_TTY=$(tty)
@@ -57,9 +53,13 @@ fi
 include "include/aliases.zsh"
 include "include/bindings.zsh"
 
-# Prezto
+# Initialize plugins
 
 if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+if [[ -e "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh" ]]; then
+    include "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh"
 fi
 
