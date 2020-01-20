@@ -87,11 +87,18 @@ let maplocalleader='<space>'
 let g:base16colorspace=16
 colorscheme base16-astra
 
+" Always restore the current working directory of a session to the
+" directory of the session file, and not the directory that was used
+" when the session was last updated. This causes the correct directory
+" to be reported by tmux for proper persistence of [n]vim panes.
+set sessionoptions-=curdir
+set sessionoptions+=sesdir
+
 set wildignore+=.git,*.pyc  " Ignore these patterns during wildcard expansion
 set path+=$SANDBOX/repos  " Add path for resolution with gf
 set backup                " Back up before writing
 
-set colorcolumn=90      " Display right margin
+set colorcolumn=90        " Display right margin
 set number                " Show line numbers
 set ruler                 " Show the line and column number of the cursor position in the status line
 set scrolloff=5           " Minimum number of lines to keep above/below cursor
@@ -215,7 +222,6 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 0        " Don't jump to an already-open file
 
 let g:NERDSpaceDelims = 1
-let g:NERDTreeChDirMode = 2          " Change CWD whenever tree root is changed
 let g:NERDTreeRespectWildIgnore = 1
 
 let g:tagbar_width = 32              " Decrease from 40
@@ -314,6 +320,7 @@ nnoremap <silent> <leader>noh :nohlsearch<CR>
 nmap <silent> <leader>tb :TagbarToggle<CR>
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
 nmap <silent> <leader>nf :NERDTreeFind<CR>
+nmap <silent> <leader>ob :Obsession<CR>
 nmap <silent> <leader>ws :StripWhitespace<CR>
 nmap <silent> <leader>ts :ToggleWhitespace<CR>
 
