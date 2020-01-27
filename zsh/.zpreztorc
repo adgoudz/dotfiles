@@ -15,6 +15,7 @@ zstyle ':prezto:*:*' color yes
 zstyle ':prezto:load' pmodule \
   'editor' \
   'git' \
+  'syntax-highlighting' \
   'prompt'
 
 #
@@ -30,11 +31,11 @@ zstyle ':prezto:module:prompt' theme 'andrew'
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
 zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-    '0.0.0.0' \
-    '127.0.0.1'
-#
-# Editor
-#
+  '0.0.0.0' \
+  '127.0.0.1'
+  #
+  # Editor
+  #
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'
@@ -48,6 +49,32 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Set a format for oneline log output
 zstyle ':prezto:module:git:log:oneline' format \
-    '%C(7)%h%Creset %C(5)%<(12,trunc)%an%Creset %<(15)%C(8)%ad%Creset %<(70,trunc)%s %C(6)%d%Creset'
+  '%C(7)%h%Creset %C(5)%<(12,trunc)%an%Creset %<(15)%C(8)%ad%Creset %<(70,trunc)%s %C(6)%d%Creset'
 
-# vim: ft=zsh
+# Syntax Highlighting
+
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'unknown-token'                  'fg=1' \
+  'arg0'                           'fg=8' \
+  'single-hyphen-option'           'none' \
+  'double-hyphen-option'           'none' \
+  'single-quoted-argument'         'none' \
+  'double-quoted-argument'         'none' \
+  'dollar-double-quoted-argument'  'fg=15' \
+  'back-double-quoted-argument'    'fg=15' \
+  'dollar-quoted-argument'         'fg=15' \
+  'back-dollar-quoted-argument'    'fg=15' \
+  'path'                           'none' \
+  'globbing'                       'fg=5' \
+  'history-expansion'              'fg=15' \
+  'command-substitution-delimiter' 'none' \
+  'process-substitution-delimiter' 'none' \
+  'back-quoted-argument-delimiter' 'none' \
+  'commandseparator'               'fg=4' \
+  'reserved-word'                  'fg=5' \
+  'suffix-alias'                   'none' \
+  'precommand'                     'none' \
+  'rc-quote'                       'none' \
+  'comment'                        'none'
+
+# vim: ft=zsh sw=2
