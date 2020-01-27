@@ -54,6 +54,7 @@ fi
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+export FZF_DEFAULT_COMMAND="find * -name '.*' -o -name '*'"
 export FZF_DEFAULT_OPTS='
   --height 40%
   --layout=reverse
@@ -62,6 +63,7 @@ export FZF_DEFAULT_OPTS='
   --color=fg:8,fg+:7,hl:5,hl+:5,bg+:10
   --color=prompt:4,spinner:14,info:7,pointer:4,marker:1
 '
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/.ripgreprc
 
