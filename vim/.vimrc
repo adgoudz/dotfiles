@@ -224,6 +224,7 @@ let g:ctrlp_switch_buffer = 0        " Don't jump to an already-open file
 
 let g:NERDSpaceDelims = 1
 let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeShowHidden = 1
 
 let g:tagbar_width = 32              " Decrease from 40
 let g:tagbar_map_togglefold = 'za'   " Unmap 'o' for toggling folds
