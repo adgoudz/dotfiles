@@ -26,7 +26,7 @@ path=($BREW_PREFIX/opt/python/libexec/bin $path)
 # login shell. Make sure it's set before anything
 # tries to look for it.
 
-export SHELL=${SHELL:-$(whence zsh)}
+export SHELL=$(whence zsh)
 
 # Provide modern term capabilities if we can
 
