@@ -56,10 +56,14 @@ include "include/bindings.zsh"
 # Initialize plugins
 
 if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    include "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 if [[ -e "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh" ]]; then
     include "${ZDOTDIR:-$HOME}/.config/fzf/fzf.zsh"
+fi
+
+if [[ -e "$BREW_PREFIX/etc/profile.d/z.sh" ]]; then
+    include "$BREW_PREFIX/etc/profile.d/z.sh"
 fi
 
