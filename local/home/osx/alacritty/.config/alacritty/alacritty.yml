@@ -100,6 +100,7 @@ key_bindings:
   - { key: C, mods: Alt,     chars: "\x1bc" }
   - { key: D, mods: Alt,     chars: "\x1bd" }
   - { key: D, mods: Command, chars: "\x1bd" }
+  - { key: X, mods: Control, chars: "\x18" }
   - { key: Period, mods: Alt,     chars: "\x1b." }
   - { key: Period, mods: Command, chars: "\x1b." }
 
