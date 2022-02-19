@@ -2,10 +2,6 @@
 setopt shwordsplit
 setopt extendedglob
 setopt nullglob
-setopt histfindnodups
-setopt histignorealldups
-setopt appendhistory
-setopt sharehistory
 setopt autocd
 setopt autopushd
 setopt pushdignoredups

@@ -6,14 +6,13 @@ zstyle ':prezto:*:*' color yes
 # Set Prezto modules to load
 #
 
-# 'editor' \
-# 'history' \
 # 'directory' \
 # 'spectrum' \
 # 'utility' \
 
 zstyle ':prezto:load' pmodule \
   'editor' \
+  'history' \
   'git' \
   'syntax-highlighting' \
   'prompt'
