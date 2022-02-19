@@ -7,7 +7,7 @@ alias dotfiles='cd $DOTFILES'
 alias bin='cd $SANDBOX/bin'
 alias installs='cd $SANDBOX/installs'
 alias repos='cd $SANDBOX/repos'
-alias sessions='cd $SANDBOX/sessions'
+alias sessions='cd $SANDBOX/share/sessions'
 alias src='cd $SANDBOX/src'
 
 alias userbase='cd $PYTHON_USER_BASE'
