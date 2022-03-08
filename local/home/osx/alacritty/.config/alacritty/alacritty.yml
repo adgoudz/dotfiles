@@ -81,6 +81,9 @@ colors:
     white:   '0xffffff'
 
 key_bindings:
+  # See the default config for key binding documentation:
+  # https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
   # When mapping keys with the Control modifier, see here for hex equivalents:
   # https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls
 
@@ -106,7 +109,7 @@ key_bindings:
 
     # Tmux
   - { key: H, mods: Alt,     chars: "\x1bh" }
-  - { key: H, mods: Command, chars: "\x1bh" } # Overrides Hide
+  - { key: H, mods: Command, chars: "\x1bh" } # Overrides Hide (see https://github.com/alacritty/alacritty/issues/5346)
   - { key: K, mods: Alt,     chars: "\x1bk" }
   - { key: K, mods: Command, chars: "\x1bk" } # Overrides ClearHistory
   - { key: W, mods: Alt,     chars: "\x1bw" }
