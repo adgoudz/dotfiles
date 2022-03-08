@@ -20,7 +20,6 @@ path=(/usr/sbin $path)
 path=($BREW_PREFIX/bin $path)
 path=($BREW_PREFIX/sbin $path)
 path=($SANDBOX/bin $path)
-path=($BREW_PREFIX/opt/python/libexec/bin $path)
 
 # $SHELL might not be set if zsh isn't our default
 # login shell. Make sure it's set before anything
