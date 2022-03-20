@@ -24,7 +24,7 @@ live_config_reload: true
 window:
   dimensions:
     columns: 285
-    lines: 80
+    lines: 76
 
   padding:
     y: 1
