@@ -53,7 +53,7 @@ fi
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export FZF_DEFAULT_COMMAND="find * -name '.*' -o -name '*'"
+export FZF_DEFAULT_COMMAND="find . -name '.*' -o -name '*'"
 export FZF_DEFAULT_OPTS='
   --height 40%
   --layout=reverse
