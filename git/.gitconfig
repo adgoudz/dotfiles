@@ -9,3 +9,5 @@
 	date = human
 [include]
 	path = ~/.local/dotfiles/git/include/gitconfig
+[pull]
+	ff = only
