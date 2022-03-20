@@ -98,7 +98,7 @@ set wildignore+=.git,*.pyc  " Ignore these patterns during wildcard expansion
 set path+=$SANDBOX/repos  " Add path for resolution with gf
 set backup                " Back up before writing
 
-set colorcolumn=90        " Display right margin
+set colorcolumn=101       " Display right margin
 set number                " Show line numbers
 set ruler                 " Show the line and column number of the cursor position in the status line
 set scrolloff=5           " Minimum number of lines to keep above/below cursor
