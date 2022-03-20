@@ -328,10 +328,4 @@ nmap <silent> <leader>ts :ToggleWhitespace<CR>
 
 " }}}
 "
-" Abbreviations {{{
-"
 
-iabbrev -- —
-
-" }}}
-"
