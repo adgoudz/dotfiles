@@ -8,6 +8,6 @@
 [log]
 	date = human
 [include]
-	path = ~/.local/dotfiles/git/include/gitconfig
+	path = ~/.config/git/gitconfig.inc
 [pull]
 	ff = only

@@ -2,7 +2,6 @@
 export SANDBOX=$HOME/Sandbox
 
 DOTFILES=$SANDBOX/dotfiles
-LOCAL_DOTFILES=$HOME/.local/dotfiles
 
 export BREW_PREFIX=/usr/local
 

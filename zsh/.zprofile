@@ -80,7 +80,7 @@ path=($PYTHON3_USER_BASE/bin $path)  # pip3
 
 # Source local configuration
 
-if [[ -e "$LOCAL_DOTFILES/zsh/include/zprofile" ]]; then
-    include "$LOCAL_DOTFILES/zsh/include/zprofile"
+if [[ -e "$HOME/.config/zsh/zprofile.inc" ]]; then
+    include "$HOME/.config/zsh/zprofile.inc"
 fi
 

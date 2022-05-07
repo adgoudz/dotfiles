@@ -40,8 +40,8 @@ export GPG_TTY=$(tty)
 
 # Source local configuration
 
-if [[ -e "$LOCAL_DOTFILES/zsh/include/zshrc" ]]; then
-    include "$LOCAL_DOTFILES/zsh/include/zshrc"
+if [[ -e "$HOME/.config/zsh/zshrc.inc" ]]; then
+    include "$HOME/.config/zsh/zshrc.inc"
 fi
 
 # Source shared configuration
