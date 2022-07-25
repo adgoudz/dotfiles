@@ -3,7 +3,7 @@ export SANDBOX=$HOME/Sandbox
 
 DOTFILES=$SANDBOX/dotfiles
 
-export BREW_PREFIX=/usr/local
+export BREW_PREFIX=/opt/homebrew
 
 # Make our preferred shell known to other processes
 export SHELL=$BREW_PREFIX/bin/zsh

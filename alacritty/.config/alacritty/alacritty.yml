@@ -7,7 +7,7 @@
 # as our user's default shell
 
 shell:
-  program: /usr/local/bin/zsh
+  program: /opt/homebrew/bin/zsh
   args:
     - --login
 
@@ -23,8 +23,8 @@ live_config_reload: true
 
 window:
   dimensions:
-    columns: 285
-    lines: 76
+    columns: 270
+    lines: 72
 
   padding:
     y: 1
