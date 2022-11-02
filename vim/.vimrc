@@ -218,7 +218,6 @@ augroup vimrc
 augroup END
 
 let g:strip_whitespace_on_save = 1
-let g:strip_whitespace_confirm= 0
 
 let g:ctrlp_extensions = ['buffertag', 'dir']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20'
