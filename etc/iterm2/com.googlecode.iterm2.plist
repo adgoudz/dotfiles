@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -15,6 +17,8 @@
 	<key>Default Bookmark Guid</key>
 	<string>07D263D5-2FFE-4D7F-8817-35C5503F1A42</string>
 	<key>DisableFullscreenTransparency</key>
+	<false/>
+	<key>EnterCopyModeAutomatically</key>
 	<false/>
 	<key>GlobalKeyMap</key>
 	<dict/>
@@ -905,6 +909,8 @@
 			</dict>
 			<key>Mouse Reporting</key>
 			<false/>
+			<key>Mouse Reporting allow mouse wheel</key>
+			<false/>
 			<key>Name</key>
 			<string>Andrew</string>
 			<key>Non Ascii Font</key>
@@ -1008,38 +1014,7 @@
 	<key>PinchToChangeFontSizeDisabled</key>
 	<true/>
 	<key>PointerActions</key>
-	<dict>
-		<key>Button,1,1,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kContextMenuPointerAction</string>
-		</dict>
-		<key>Button,2,1,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPasteFromClipboardPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeDown,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevWindowPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeLeft,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeRight,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeUp,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextWindowPointerAction</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SoundForEsc</key>
