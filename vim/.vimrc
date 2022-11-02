@@ -94,7 +94,7 @@ colorscheme base16-astra
 set sessionoptions-=curdir
 set sessionoptions+=sesdir
 
-set wildignore+=.git,*.pyc  " Ignore these patterns during wildcard expansion
+set wildignore+=.git,*.pyc,.DS_Store  " Ignore these patterns during wildcard expansion
 set path+=$SANDBOX/repos  " Add path for resolution with gf
 set backup                " Back up before writing
 
