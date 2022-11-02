@@ -981,6 +981,8 @@
 			<false/>
 			<key>Use Bright Bold</key>
 			<false/>
+			<key>Use Custom Window Title</key>
+			<true/>
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
