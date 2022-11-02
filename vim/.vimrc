@@ -211,6 +211,10 @@ endfunction
 
 augroup vimrc
   autocmd User AirlineAfterInit call s:AirlineInit()
+
+  if has('nvim')
+    autocmd TermOpen * :DisableWhitespace
+  endif
 augroup END
 
 let g:strip_whitespace_on_save = 1
