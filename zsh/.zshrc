@@ -10,6 +10,10 @@ unsetopt caseglob
 
 # Initialize the completion system
 
+if type brew &>/dev/null; then
+    fpath=($BREW_PREFIX/share/zsh/site-functions $fpath)
+fi
+
 autoload -U compinit
 compinit
 
