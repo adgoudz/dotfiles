@@ -76,7 +76,8 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # Development path
 
-path=($PYTHON3_USER_BASE/bin $path)  # pip3
+path=($PYTHON3_USER_BASE/bin $path) # pip3
+path=($BREW_PREFIX/opt/python/libexec/bin $path) # python symlinks
 
 # Source local configuration
 
