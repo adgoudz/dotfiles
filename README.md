@@ -372,6 +372,9 @@ TPM is the standard plugin manager for tmux. I currently use it for:
   This lets you recreate an entire Tmux session after a restart, including windows,
   current directories, and even Neovim sessions (see vim-obsession under [Editor](#editor)).
 
+* [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+  This works together with a Neovim plugin to enable moving between Neovim and tmux
+  windows with the same keyboard shortcuts. I'll talk more about Neovim below.
 
 ## Shell
 
@@ -456,9 +459,9 @@ these are:
   pairing this with tmux-resurrect, you can automatically restore your editors when you
   restore your tmux session.
 
-* [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)  
-  This works together with a set of tmux key bindings to enable moving between Neovim and
-  tmux windows with the same keyboard shortcuts.
+* [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+  As mentioned above, this works together with a set of tmux key bindings to enable moving
+  between Neovim and tmux windows with the same keyboard shortcuts.
 
 
 ## Themes
