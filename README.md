@@ -101,11 +101,11 @@ If you wanted to uninstall a tool that was automatically installed in these dire
 you'd traditionally need to remove each file manually, assuming you knew which files
 needed to be removed. If you were lucky, you might've had access to a `make` target that
 did this for you. Stow, however, can remove its symbolic links and effectively uninstall
-Perl wit a single command.
+Perl with a single command.
 
 Today it is far less common to install software this way, given the wide availability of
-mature package managers. However, dotfile management is primarily about managing
-symlinks, and Stow handles this well.
+mature package managers. Dotfile management is primarily about managing symlinks, however,
+and Stow handles this well.
 
 [filesystem hierarchy standard]: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch04s09.html
 
@@ -220,7 +220,7 @@ job, but any system can be used here.
 
 Using Git as an example again, I maintain a global `.gitconfig` file that I use in all of
 my environments and a host-specific file that my `.gitconfig` includes via the
-`include.path` directive. I've named the latter file `gitconfig.inc`.
+[include.path](git-include-path) directive. I've named the latter file `gitconfig.inc`.
 
 Git expects this global file to be located in the home directory, so I've added it to the
 Git package with the global ignore file that I introduced in the previous section:
@@ -230,7 +230,7 @@ Git package with the global ignore file that I introduced in the previous sectio
 └── git                  # The package directory for git
     ├── .config
     │   └── git
-    │       └── ignore
+    │       └── ignore   # The global ignore file I introduced earlier
     └── .gitconfig
 ```
 
@@ -243,7 +243,7 @@ LINK: .gitconfig => ../dotfiles/git/.gitconfig
 LINK: .config/git => ../dotfiles/git/.config/git
 ```
 
-Next, the include file is located in a package under `local/home/macos`, and I've chosen
+Next, `gitconfig.inc` is located in a package under `local/home/macos`, and I've chosen
 to symlink it in `.config/git` with Git's other configuration:
 
 ```
@@ -254,7 +254,7 @@ local/home/macos         # The nested stow directory
             └── gitconfig.inc
 ```
 
-To create a link to this include file, I `cd` to the nested stow directory and repeat the
+To create the appropriate link to this file, I `cd` to the nested stow directory and repeat the
 `stow` command above. Remember that a Stow resource file implicitly sets the target
 directory to my home directory:
 
@@ -281,6 +281,8 @@ with a directory, and then symlinks the individual files from both the top-level
 package and the nested package. This is automatic when Stow recognizes the original
 symlink, which is made possible by including an empty `.stow` file in each stow directory
 (see [Configuring Stow](#configuring-stow) below).
+
+[git-include-path]: https://git-scm.com/docs/git-config#_includes
 
 ### Alternative Layout
 
@@ -310,9 +312,8 @@ Stow doesn't address the need to maintain private keys or other secrets. One opt
 is to encrypt them manually with PGP, commit them, and then decrypt them when setting up
 a new host. However, this assumes that the PGP keys are manually copied to each host.
 
-Stow's lack of support for encryption is a trade-off between simplicity (see my
-[requirements](#dotfile-management) at the start of this README) and comprehensive
-functionality.
+Stow's lack of support for encryption is a trade-off between simplicity and comprehensive
+functionality (see my [requirements](#dotfile-management) at the start of this README).
 
 
 ## Configuring Stow
@@ -402,7 +403,7 @@ of OMZ.
 | Configuration for interactive shells              | [.zshrc]      | [.config/zsh/zshrc.inc]    |
 | Prezto configuration                              | [.zpreztorc]  | Not used                   |
 
-See the Prezto [documentation][prezto-runcoms] and [chapter 2](zsh-startup-files) of the
+See the Prezto [documentation][prezto-runcoms] and [chapter 2][zsh-startup-files] of the
 Zsh guide for an explanation of these files.
 
 [.zprofile]: zsh/.zprofile
@@ -493,7 +494,7 @@ them for a few reasons:
   found vim-airline to be faster and more reliable.
 
 * powerlevel10k targets the Zsh prompt only. I prefer a minimal prompt theme, so the
-  overhead of another large dependency isn't worth it.
+  overhead of another large dependency doesn't seem necessary to me.
 
 [powerline]: https://github.com/powerline/powerline
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k
