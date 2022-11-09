@@ -4,16 +4,6 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>07D263D5-2FFE-4D7F-8817-35C5503F1A42</string>
 	<key>DisableFullscreenTransparency</key>
@@ -210,13 +200,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.71764705882352942</real>
+				<real>0.68627450980392157</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.74509803921568629</real>
+				<real>0.71764705882352942</real>
 				<key>Red Component</key>
-				<real>0.54117647058823526</real>
+				<real>0.4823529411764706</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
@@ -951,20 +941,20 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.71764705882352942</real>
+				<real>0.68627450980392157</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.74509803921568629</real>
+				<real>0.71764705882352942</real>
 				<key>Red Component</key>
-				<real>0.54117647058823526</real>
+				<real>0.4823529411764706</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Space</key>
