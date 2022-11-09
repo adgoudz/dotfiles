@@ -220,7 +220,7 @@ job, but any system can be used here.
 
 Using Git as an example again, I maintain a global `.gitconfig` file that I use in all of
 my environments and a host-specific file that my `.gitconfig` includes via the
-[include.path](git-include-path) directive. I've named the latter file `gitconfig.inc`.
+[include.path][git-include-path] directive. I've named the latter file `gitconfig.inc`.
 
 Git expects this global file to be located in the home directory, so I've added it to the
 Git package with the global ignore file that I introduced in the previous section:
