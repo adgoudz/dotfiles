@@ -348,19 +348,25 @@ to my preferences.
 
 ## Terminal
 
-[alacritty/alacritty](https://github.com/alacritty/alacritty)
+[alacritty/alacritty](https://github.com/alacritty/alacritty)  
 Alacritty is the fastest terminal emulator I've ever used. It's also very simple, but
 those who expect support for window tabs and other basic functionality may find it harder
 to use.
 
-[tmux/tmux](https://github.com/tmux/tmux)
+[tmux/tmux](https://github.com/tmux/tmux)  
 Alacritty eschews tabs in favor of pairing the emulator with tmux, which multiplexes
 a single terminal to simulate panes and windows. There is a learning curve for tmux, but
 it's a game-changer for anyone who often develops in a terminal.
 
+[gnachman/iterm2](https://iterm2.com)  
+In the off-chance I'm not able to install Alacritty on MacOS (e.g., at work), I also back
+up a properties file with iTerm2 configuration that closely resembles my configuration
+for Alacritty.
+
 ### Configuration
 
 * [.config/alacritty/alacritty.yml](alacritty/.config/alacritty/alacritty.yml)
+* [com.googlecode.iterm2.plist](etc/iterm2/com.googlecode.iterm2.plist)
 * [.tmux.conf](tmux/.tmux.conf)
 
 ### Plugins
