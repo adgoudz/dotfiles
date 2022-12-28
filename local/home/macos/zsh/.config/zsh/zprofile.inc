@@ -1,17 +1,6 @@
 
 # Development configuration
 
-export PIPSI_HOME=$VIRTUALENVS_ROOT
-
-if command -v pyenv &>/dev/null; then
-    export PYENV_ROOT=$HOME/.local/pyenv
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-    if command -v pyenv-virtualenv-init &>/dev/null; then
-        PYENV_VIRTUALENV_INSTALLED=1
-    fi
-fi
-
 export NODE_ENV=development
 
 # Development path (added in reverse)
