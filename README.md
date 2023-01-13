@@ -5,12 +5,9 @@
 
 # Overview
 
-This repository exists for personal reasons, but occasionally I'm asked how I configure
-my development environment. I use this configuration to provide feature parity on
-multiple Unix-like operating systems and quickly set up environments on new hosts.
-Colloquially this is known as dotfile management.
-
-This README covers how I manage these dotfiles and how they configure my environment:
+This project exists for personal reasons, but occasionally I'm asked how I configure
+my development environment. I use these dotfiles to quickly set up my environment and 
+achieve feature parity on different Unix-like operating systems.
 
 [Dotfile Management](#dotfile-management)  
    * [GNU Stow](#gnu-stow)
@@ -30,10 +27,10 @@ This README covers how I manage these dotfiles and how they configure my environ
 
 # Dotfile Management
 
-The open-source community offers no fewer than 50 [dotfile managers], and many of them
-are worth checking out. [This Hacker News post] also has some great ideas. While I'm
-biased toward the strategy described below, you should ultimately aim to maximize your
-net productivity. [xkcd #1205] outlines my favorite approach to measuring this.
+The developer community offers several [dotfile managers] and [other great ideas] for
+how to manage dotfiles. While I'm biased toward my strategy, feel free to ignore this if 
+some other system is going to level up your productivity ([xkcd #1205] outlines my 
+favorite approach to measuring this).
 
 Assuming I have a package manager installed (either [Homebrew] or a well-supported native
 option), the first tools I install are:
@@ -45,15 +42,15 @@ option), the first tools I install are:
 cloning this repository. Familiarity with package managers and Git is assumed, but both
 have excellent documentation for anyone just getting started.
 
-I chose Stow based on the following requirements:
+I chose Stow based on these requirements:
 
 1. **The tool should be easy to bootstrap on popular Unix-like operating systems**  
-   As a GNU tool, Stow is consistently available with package managers. In the worst
-   case, it's easy to [install it from source][stow-installation] (it's just a Perl
+   As a GNU tool, Stow is consistently available with package managers. It's also 
+   easy to [install from source][stow-installation] if necessary (it's just a Perl
    module).
 
 2. **The learning curve for the tool should be shallow**  
-   Stow follows the Unix philosophy of doing one thing and doing it well, which makes it
+   Stow follows the Unix philosophy of doing one thing and doing it well, so it's
    easy to master.
 
 3. **Configuration for the tool should be optional, not required**  
@@ -61,10 +58,10 @@ I chose Stow based on the following requirements:
    [resource files][stow-resource-files], both of which are optional.
 
 4. **The tool should support managing dotfiles for multiple hosts and environments**  
-   I'll describe how Stow can support this under
+   I'll talk about how Stow can support this under
    [Environment-Specific Configuration](#environment-specific-configuration).
 
-[this hacker news post]: https://news.ycombinator.com/item?id=11070797
+[other great ideas]: https://news.ycombinator.com/item?id=11070797
 [dotfile managers]: https://github.com/topics/dotfile-manager
 [xkcd #1205]: https://xkcd.com/1205/
 [homebrew]: https://brew.sh/
@@ -83,8 +80,8 @@ Stow was created to solve a problem unrelated to dotfile management:
 > independent software packages without confusing them with other files sharing the same
 > file system space.
 
-More specifically, Stow allows you to install Perl into a directory like
-`/usr/local/stow/perl`, and create symlinks to make it appear as if its files were
+More specifically, it lets you install Perl into a directory like
+`/usr/local/stow/perl` and create symlinks that make it appear as if its files were
 installed under these directories:
 
 ```
@@ -95,15 +92,15 @@ installed under these directories:
 ```
 
 This aligns to the [Filesystem Hierarchy Standard] and makes it easier for other tools
-to find this new Perl installation (e.g., `man perlrun`).
+to find the Perl installation (e.g., `man perlrun`).
 
 If you wanted to uninstall a tool that was automatically installed in these directories,
 you'd traditionally need to remove each file manually, assuming you knew which files
-needed to be removed. If you were lucky, you might've had access to a `make` target that
-did this for you. Stow, however, can remove its symbolic links and effectively uninstall
+needed to be removed. You might've had access to a `make` target that did this for you
+if you were lucky. Stow, however, can remove its symbolic links and completely uninstall
 Perl with a single command.
 
-Today it is far less common to install software this way, given the wide availability of
+Today it is less common to install software this way, given the wide availability of
 mature package managers. Dotfile management is primarily about managing symlinks, however,
 and Stow handles this well.
 
@@ -111,10 +108,9 @@ and Stow handles this well.
 
 ### Usage
 
-As for how it works, let's say we wanted to share a Git [global ignore] file across
-multiple development hosts. We'd first create an ignore file in the following directory
-structure below our home directory. Stow refers to some of these directories by logical
-names:
+Let's say we wanted to share a Git [global ignore] file across multiple development hosts. 
+We'd first create an ignore file in the following directory structure below our home directory. 
+Stow refers to some of these directories by logical names:
 
 ```
 /Users/Andrew            # The "target" directory
@@ -138,7 +134,7 @@ Stow is doing:
 LINK: .config/git => ../dotfiles/git/.config/git
 ```
 
-In other words, Stow creates one symlink to mirror the contents of the `git` package
+You can see that Stow creates one symlink to mirror the contents of the `git` package
 directory within our target directory (two levels higher). This is exactly where Git
 expects to find the global ignore file:
 
@@ -149,11 +145,11 @@ expects to find the global ignore file:
 ```
 
 Stow is powerful enough to work with existing directories in the target directory (e.g.,
-`.config`) and it even manages symlinks that overlap with other package directories.
-This concept is referred to as tree folding, which is explained further in the
+`.config`) and even manages symlinks that overlap with other package directories.
+This concept is referred to as tree folding, which you can read about in the
 [documentation][stow-tree-folding].
 
-Stow can create symlinks in any target directory by using the `-t` option, including
+Stow can create symlinks in any target directory using the `-t` option, including
 grandparent or sibling directories. This gives us the flexibility to locate our dotfiles
 directory somewhere else in the file system, including directories within other stow
 directories (more on this below).
@@ -173,7 +169,7 @@ cloning:
 ```
 
 I also use a Stow [resource file][stow-resource-files] to implicitly set my target directory
-for `stow` commands and make it easier to work with nested stow directories. Before
+for `stow` commands, which makes it easier to work with nested stow directories. Before
 running any other commands in this repository, I effectively set up Stow using Stow:
 
 ```shell
@@ -220,10 +216,10 @@ job, but any system can be used here.
 
 Using Git as an example again, I maintain a global `.gitconfig` file that I use in all of
 my environments and a host-specific file that my `.gitconfig` includes via the
-[include.path][git-include-path] directive. I've named the latter file `gitconfig.inc`.
+[include.path][git-include-path] directive. I've named the latter `gitconfig.inc`.
 
 Git expects this global file to be located in the home directory, so I've added it to the
-Git package with the global ignore file that I introduced in the previous section:
+Git package with the global ignore file that I introduced above:
 
 ```
 .                        # The top-level stow directory
@@ -339,29 +335,31 @@ The following Stow-specific files are used in this repository:
 
 # Tools & Configuration
 
-The remainder of this README covers the tools and plugins I use most and their
-corresponding configuration files. I install each tool with `brew` on both MacOS and
-Linux-based hosts.
+The remainder of this README covers the software I use most and their corresponding 
+configuration files. I use `brew` to install almost everything on both MacOS and Linux-based 
+hosts.
 
-Nearly every configuration file in this repository was written from scratch and tailored
-to my preferences.
+Note that my configuration is very opinionated and I've written most of it from scratch to 
+fit my needs (with plenty of ideas borrowed from the community). While everything should
+_just work_, it's probably only useful as an example and I didn't write it to be copied
+as-is.
 
 ## Terminal
 
 [alacritty/alacritty](https://github.com/alacritty/alacritty)  
-Alacritty is the fastest terminal emulator I've ever used. It's also very simple, but
-those who expect support for window tabs and other basic functionality may find it harder
+Alacritty is a fast terminal emulator. It's also very simple (to a fault, some might say), 
+so those who expect support for window tabs and other basic functionality may find it harder
 to use.
 
 [tmux/tmux](https://github.com/tmux/tmux)  
 Alacritty eschews tabs in favor of pairing the emulator with tmux, which multiplexes
-a single terminal to simulate panes and windows. There is a learning curve for tmux, but
-it's a game-changer for anyone who often develops in a terminal.
+a single terminal to simulate panes and windows. There's a learning curve for tmux, but
+it allows me to use a consistent terminal environment across most emulators (along
+with a few other nice features).
 
 [gnachman/iterm2](https://iterm2.com)  
-In the off-chance I'm not able to install Alacritty on MacOS (e.g., at work), I also back
-up a properties file with iTerm2 configuration that closely resembles my configuration
-for Alacritty.
+In the off-chance I'm unable to run Alacritty, I've backed up some iTerm2 configuration 
+that closely resembles my Alacritty settings.
 
 ### Configuration
 
@@ -380,24 +378,23 @@ TPM is the standard plugin manager for tmux. I currently use it for:
 
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)  
   This works together with a Neovim plugin to enable moving between Neovim and tmux
-  windows with the same keyboard shortcuts. I'll talk more about Neovim below.
+  windows with the same keyboard shortcuts. I'll talk more about this below.
 
 ## Shell
 
 [zsh-users/zsh](https://github.com/zsh-users/zsh)  
-Z Shell (Zsh) was quite possibly the gateway drug for today's generation of command-line
-users. It provides a programming language like Bash with features like tab completion and
+Z Shell (Zsh) was a gateway drug of sorts for a generation of command-line users. It 
+provides a programming language like Bash with features like tab completion and
 themeable prompts, transforming a command line into a powerful editor. The cool kids
 might be using [fish], but I like Zsh for its active development community and its
-similarities to Bash and other POSIX shells.
+similarities to POSIX shells.
 
 [sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto)  
 One of the most popular projects on GitHub is a configuration and plugin manager called
 Oh My Zsh (OMZ). I used OMZ for a few years before I ultimately dropped it for Prezto,
-which was created after its author [couldn't convince][gh-377] the author of OMZ to
-simplify the framework. While the Prezto community is significantly less active than
-OMZ's, my command prompt loads faster with Prezto and it offers all of the basic features
-of OMZ.
+which was created after its author [couldn't convince][gh-377] Robby Russell to simplify the 
+framework. While the Prezto community is significantly less active than OMZ's, my command 
+prompt loads more quickly with Prezto.
 
 [fish]: https://github.com/fish-shell/fish-shell
 [omz]: https://github.com/ohmyzsh/ohmyzsh
@@ -430,7 +427,7 @@ Zsh guide for an explanation of these files.
 
 [neovim/neovim](https://github.com/neovim/neovim)  
 Neovim began as a fork of [Vim] in 2014 with a faster plugin system, a built-in terminal
-emulator, and several other features. I'll only use Vim if I'm on a host where I can't
+emulator, and many other features. I'll only use Vim if I'm on a host where I can't
 install Neovim, but since this happens often when I log in to remote servers, my Neovim
 configuration is [backwards-compatible][nvim-from-vim] with Vim. My configuration will
 also apply Neovim's defaults in Vim so that the editing behavior is identical between the
@@ -453,8 +450,7 @@ If you're viewing `.vimrc` in Neovim, use `zo` and `zc` in normal mode to open a
 
 [junegunn/vim-plug](https://github.com/junegunn/vim-plug)  
 vim-plug is one of several good options for plugin management with support for both Neovim
-and Vim. My preferred plugins are installed in my `.vimrc`, and the most important of
-these are:
+and Vim. My preferred plugins are installed in my `.vimrc`, the most important of which are:
 
 * [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)  
   This provides visual cues and context-specific information in Neovim's status line. See
@@ -499,7 +495,7 @@ While Powerline and powerlevel10k are both powerful and extensible, I prefer not
 them for a few reasons:
 
 * Powerline [didn't support Neovim][gh-1287] at the time I switched from Vim. Powerline
-  is also a heavyweight framework that depends on background Python processes, and I've
+  is also a heavyweight framework that requires background Python processes, and I've
   found vim-airline to be faster and more reliable.
 
 * powerlevel10k targets the Zsh prompt only. I prefer a minimal prompt theme, so the
@@ -519,8 +515,8 @@ them for a few reasons:
 </p>
 
 The themes above use glyphs (icons) available with [Nerd Fonts], a collection of
-well-known fonts patched with glyphs from Powerline, FontAwesome, and several other
-icon-based fonts. I use [JetBrains Mono], however, any font from the collection should be
+well-known fonts patched with glyphs from Powerline, FontAwesome, and other icon-based 
+fonts. I use [JetBrains Mono], however, any font from the collection should be
 compatible.
 
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
@@ -549,8 +545,8 @@ Each theme is self-contained in the following files:
 </p>
 
 I use a custom 16-color scheme modeled on [Base16] and inspired by [Solarized] and
-[Tomorrow Night]. I've been calling it "Astra", and while I've adapted it to almost every
-tool I use, I need to make time to share this work and submit the scheme to Base16.
+[Tomorrow Night]. I've named it "Astra", and while I've adapted it to almost every
+tool I use, I need to make time to contribute it back to ~Base16~ [tinted-theming]. 
 
 The scheme is configured in each of the following:
 
@@ -565,17 +561,24 @@ The scheme is configured in each of the following:
 [.vim/autoload/airline/themes/base16_astra.vim]: vim/.vim/autoload/airline/themes/base16_astra.vim
 
 [base16]: https://github.com/chriskempson/base16
+[tinted-theming]: https://github.com/tinted-theming
 [solarized]: https://github.com/altercation/solarized
 [tomorrow night]: https://base16.netlify.app/previews/base16-tomorrow-night.html
 
 
 ## Other Tools
 
+* [asdf-vm/asdf](https://github.com/asdf-vm/asdf)  
+  One version manager to rule them all.
+
 * [junegunn/fzf](https://github.com/junegunn/fzf)  
   A fantastic fuzzy-finder for your file system and almost anything else you can think of.
 
 * [burntsushi/ripgrep](https://github.com/BurntSushi/ripgrep)  
-  An incredibly-fast regex search tool. Like `grep`, but fancier.
+  A regex search tool. Like `grep`, `ag`, and `pt`, but faster.
+  
+* [rupa/z](https://github.com/rupa/z)  
+  No more creating aliases for `cd`-ing into your favorite directories.
 
 * [htop-dev/htop](https://github.com/htop-dev/htop)  
   An interactive process viewer. Like `top`, but fancier.
