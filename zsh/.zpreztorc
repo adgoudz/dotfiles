@@ -22,7 +22,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'andrew'
+zstyle ':prezto:module:prompt' theme 'starship'
 
 #
 # Completions

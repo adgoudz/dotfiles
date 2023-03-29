@@ -5,6 +5,7 @@ setopt nullglob
 setopt autocd
 setopt autopushd
 setopt pushdignoredups
+setopt promptsubst
 
 unsetopt caseglob
 

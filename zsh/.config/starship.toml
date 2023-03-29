@@ -1,0 +1,103 @@
+
+format = """
+$all\
+$username\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$git_state\
+$fill\
+$cmd_duration\
+$gcloud\
+$scala\
+$java\
+$nodejs\
+$python\
+$terraform\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character
+"""
+
+[character]
+success_symbol = '[❯](bright-yellow)'
+
+[cmd_duration]
+format = '[took](bold-black) [$duration]($style) '
+style = 'red'
+
+[directory]
+style = 'blue'
+before_repo_root_style = 'bright-black'
+repo_root_style = 'blue'
+truncate_to_repo = false
+
+[fill]
+symbol = ' '
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+format = '[ $hash$tag]($style) '
+style = 'purple'
+
+[git_status]
+format = '[($modified )($untracked )($ahead_behind )]($style)'
+style = 'bright-black'
+modified = '󰲶'
+untracked = '󱗿'
+
+[git_state]
+format = '[$state( $progress_current/$progress_total)]($style) '
+style = 'bright-black'
+
+[gcloud]
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+symbol = '󱇶'
+
+[java]
+format = '[via](bright-black) [$symbol ($version )]($style)'
+style = 'red'
+symbol = ''
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[python]
+format = '[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)'
+style = 'green'
+
+[scala]
+format = '[$symbol ($version )]($style)'
+symbol = ''
+
+[shlvl]
+format = '[$symbol$shlvl]($style) '
+style = 'bright-black'
+symbol = '↕️ '
+threshold = 3
+disabled = false
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+style = 'purple'
+symbol = ' '
+
+# TODO
+# go
+# gradle
+# helm
+# docker_context
+# kubernetes
+# memory
+# package
+
