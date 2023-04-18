@@ -79,6 +79,12 @@ export PYTHONDONTWRITEBYTECODE=1
 
 path=($PYTHON3_USER_BASE/bin $path)  # pip3
 
+# Initialize plugins
+
+if [[ -e "$BREW_PREFIX/opt/asdf/libexec/asdf.sh" ]]; then
+    include "$BREW_PREFIX/opt/asdf/libexec/asdf.sh"
+fi
+
 # Source local configuration
 
 if [[ -e "$HOME/.config/zsh/zprofile.inc" ]]; then
