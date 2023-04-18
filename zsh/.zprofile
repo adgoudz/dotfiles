@@ -42,7 +42,7 @@ fi
 
 # Command configuration
 
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export LESS=FRIX
 
