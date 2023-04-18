@@ -4,12 +4,12 @@
 	pretty = %C(7)%h%Creset %C(5)%<(12,trunc)%an%Creset %<(15)%C(8)%ad%Creset %<(70,trunc)%s %C(6)%d%Creset
 [log]
 	date = human
-[include]
-	path = ~/.config/git/gitconfig.inc
 [pull]
 	ff = only
-[credential]
-	helper =
-	helper = /usr/local/share/gcm-core/git-credential-manager-core
+[push]
+	autoSetupRemote = true
 [credential "https://github.com"]
 	username = adgoudz@gmail.com
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
+[include]
+	path = ~/.config/git/gitconfig.inc
