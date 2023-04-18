@@ -347,6 +347,8 @@
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
 			<true/>
+			<key>Draw Powerline Glyphs</key>
+			<false/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -908,7 +910,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNerdFontCompleteM-Regular 12</string>
+			<string>JetBrainsMonoNerdFontComplete-Regular 12</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -971,6 +973,8 @@
 			<integer>264</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Unicode Version</key>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -986,7 +990,7 @@
 			<key>Use libtickit protocol</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.05</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -1007,6 +1011,8 @@
 	<dict/>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
