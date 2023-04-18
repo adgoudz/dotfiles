@@ -112,8 +112,8 @@ set ignorecase            " Ignore case in search patterns
 set smartcase             " Override ignorecase when patterns contain uppercase chars
 
 set expandtab             " Use spaces instead of tabs
-set tabstop=4             " This many spaces to one tab
-set shiftwidth=4          " Default to tabstop for <<, >>, and smarttab
+set tabstop=2             " This many spaces to one tab
+set shiftwidth=2          " Default to tabstop for <<, >>, and smarttab
 set shiftround            " Round indents to multiple of shiftwidth
 
 set nowrap
