@@ -14,6 +14,7 @@ $terraform\
 $python\
 $scala\
 $java\
+$gcloud\
 $line_break\
 $jobs\
 $battery\
@@ -62,7 +63,7 @@ format = '[$state( $progress_current/$progress_total)]($style) '
 style = 'bright-black'
 
 [gcloud]
-format = '[($symbol $region$project )]($style)'
+format = '[( $symbol $project )]($style)'
 symbol = '󱇶'
 
 [java]
