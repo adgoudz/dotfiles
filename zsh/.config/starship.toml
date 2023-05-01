@@ -30,7 +30,7 @@ $character
 success_symbol = '[❯](bright-yellow)'
 
 [cmd_duration]
-format = '[took $duration ](bright-black)'
+format = '[took $duration](bright-black)'
 style = 'blue'
 
 [directory]
@@ -63,12 +63,12 @@ format = '[$state( $progress_current/$progress_total)]($style) '
 style = 'bright-black'
 
 [gcloud]
-format = '[( $symbol $project )]($style)'
+format = '  [($symbol $project)]($style)'
 symbol = '󱇶'
 
 [java]
 detect_extensions = ['java', 'class', 'gradle']
-format = '[via](bright-black) [$symbol ($version )]($style)'
+format = ' [via](bright-black) [$symbol( $version)]($style)'
 style = 'red'
 symbol = ''
 
@@ -77,16 +77,16 @@ symbol = ' '
 style = 'bright-black'
 
 [nodejs]
-format = '[$symbol ($version )]($style)'
+format = '  [$symbol( $version)]($style)'
 symbol = ''
 
 [python]
-format = '[$symbol $pyenv_prefix($version )]($style)([in](bright-black) [$virtualenv]($style) )'
+format = '  [$symbol $pyenv_prefix($version)]($style)( [in](bright-black) [$virtualenv]($style))'
 style = 'green'
 symbol = '󰌠'
 
 [scala]
-format = '[$symbol ]($style)'
+format = '  [$symbol]($style)'
 symbol = ''
 
 [shlvl]
@@ -97,7 +97,7 @@ threshold = 3
 disabled = false
 
 [terraform]
-format = '[$symbol $version ]($style)'
+format = '  ([$symbol $version]($style))'
 style = 'purple'
 symbol = ''
 
