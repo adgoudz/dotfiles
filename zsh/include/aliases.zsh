@@ -10,8 +10,6 @@ alias repos='cd $SANDBOX/repos'
 alias sessions='cd $SANDBOX/share/sessions'
 alias src='cd $SANDBOX/src'
 
-alias userbase='cd $PYTHON_USER_BASE'
-alias userbase3='cd $PYTHON3_USER_BASE'
 alias venvs='cd $VIRTUALENVS_ROOT'
 
 # Command defaults

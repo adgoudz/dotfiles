@@ -71,13 +71,7 @@ export VIRTUALENVS_ROOT=$HOME/.local/share/virtualenvs
 export WORKON_HOME=$VIRTUALENVS_ROOT
 
 export PYTHON3=$BREW_PREFIX/bin/python3
-export PYTHON3_USER_BASE=$($PYTHON3 -m site --user-base)
-
 export PYTHONDONTWRITEBYTECODE=1
-
-# Development path
-
-path=($PYTHON3_USER_BASE/bin $path)  # pip3
 
 # Initialize plugins
 
