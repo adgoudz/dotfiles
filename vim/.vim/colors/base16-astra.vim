@@ -341,6 +341,9 @@ call <sid>hi("jsGlobalNodeObjects", s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("jsExceptions",        s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("jsBuiltins",          s:gui09, "", s:cterm09, "", "", "")
 
+" JSON highlighting
+call <sid>hi("jsonKeyword",  s:gui0D, "", s:cterm0D, "", "", "")
+
 " Mail highlighting
 call <sid>hi("mailQuoted1",  s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "", "")
