@@ -8,6 +8,7 @@
 	ff = only
 [push]
 	autoSetupRemote = true
+	autosetupremote = true
 [credential "https://github.com"]
 	username = adgoudz@gmail.com
 	helper = /usr/local/share/gcm-core/git-credential-manager-core
