@@ -153,6 +153,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'solarnz/thrift.vim'
 call plug#end()
 
 " }}}
