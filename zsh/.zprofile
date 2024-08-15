@@ -13,14 +13,14 @@ autoload -U ${fpath[1]}/*(:t)
 
 # Initial path (added in reverse)
 
-path=(/bin $path)
-path=(/sbin $path)
-path=(/usr/bin $path)
-path=(/usr/sbin $path)
-path=(/usr/libexec $path)
-path=($BREW_PREFIX/bin $path)
-path=($BREW_PREFIX/sbin $path)
-path=($SANDBOX/bin $path)
+path=(/bin "$path[@]")
+path=(/sbin "$path[@]")
+path=(/usr/bin "$path[@]")
+path=(/usr/sbin "$path[@]")
+path=(/usr/libexec "$path[@]")
+path=($BREW_PREFIX/bin "$path[@]")
+path=($BREW_PREFIX/sbin "$path[@]")
+path=($SANDBOX/bin "$path[@]")
 
 # $SHELL might not be set if zsh isn't our default
 # login shell. Make sure it's set before anything
