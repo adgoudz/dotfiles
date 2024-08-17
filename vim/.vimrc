@@ -71,10 +71,11 @@ if !has('nvim')
 else
   let g:plugdir=stdpath('data') . '/plugged'
 
-  set backupdir-=.  " Don't use current directory
-  set noautoread    " Don't reload files when changed outside of nvim
+  set backupdir-=.    " Don't use current directory
+  set noautoread      " Don't reload files when changed outside of nvim
 
-  set guicursor=    " Don't use bars for cursors
+  set guicursor=      " Don't use bars for cursors
+  set notermguicolors " Force the use of cterm colors in emulators that support 24-bit color
 endif
 
 " }}}

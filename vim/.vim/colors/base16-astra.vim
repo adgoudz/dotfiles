@@ -419,6 +419,13 @@ call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
 " Java highlighting
 call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 
+"  https://neovim.io/doc/user/news-0.10.html
+if has("nvim-0.10.0")
+  hi! link WinSeparator VertSplit
+  hi! link FloatBorder  WinSeparator
+  hi! link NormalFloat  Pmenu
+endif
+
 " Remove functions
 delf <sid>hi
 
