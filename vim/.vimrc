@@ -127,6 +127,8 @@ set formatoptions+=1      " Don't break after single characters
 set formatoptions+=n      " Format numbered lists (requires autoindent)
 set formatoptions+=r      " Insert comment leader after <Enter>
 
+set fillchars+=vert:│     " Use U+2502 for the vertical window separator
+
 " }}}
 "
 " Initialization {{{
