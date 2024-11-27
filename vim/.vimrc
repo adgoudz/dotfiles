@@ -165,6 +165,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'solarnz/thrift.vim'
+Plug 'jparise/vim-graphql'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " }}}
