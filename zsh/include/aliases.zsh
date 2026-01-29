@@ -34,7 +34,7 @@ function g_() {
     alias | grep "git $1"
 }
 
-alias gla='git log --topo-order --graph -20 --pretty=format:"${_git_log_oneline_format}"'
+alias gla='git log --topo-order --graph -25 --pretty=format:"${_git_log_oneline_format}"'
 alias glcl='git log --graph --cherry-mark --no-merges --left-only'
 alias glcr='git log --graph --cherry-mark --no-merges --right-only'
 alias gcol="git checkout '@{-1}'"
