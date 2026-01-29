@@ -43,10 +43,11 @@ truncate_to_repo = false
 symbol = ' '
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol $branch(:$remote_branch)]($style) '
+symbol = '⎇'
 
 [git_commit]
-format = '[ $hash$tag]($style) '
+format = '[⎇ $hash$tag]($style) '
 style = 'purple'
 
 [git_status]
