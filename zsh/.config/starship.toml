@@ -89,6 +89,9 @@ symbol = '󰌠'
 [scala]
 format = '  [$symbol]($style)'
 symbol = ''
+detect_extensions = ['scala', 'sbt']
+detect_files = ['build.sbt']
+detect_folders = []
 
 [shlvl]
 format = '[$symbol $shlvl ]($style)'
