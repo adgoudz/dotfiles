@@ -302,17 +302,43 @@ inoremap <silent> <M-}> <Esc>:m .-2\<CR>==gi
 vnoremap <silent> <M-{> :m '>+1<CR>gv=gv
 vnoremap <silent> <M-}> :m .-2<CR>gv=gv
 
-" Window navigation
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+" Window navigation (Neovim-only, excludes terminal buffers)
+if has('nvim')
+  nnoremap <silent> <expr> <C-H> &buftype ==# 'terminal' ? "\<C-H>" : "\<C-W>h"
+  nnoremap <silent> <expr> <C-J> &buftype ==# 'terminal' ? "\<C-J>" : "\<C-W>j"
+  nnoremap <silent> <expr> <C-K> &buftype ==# 'terminal' ? "\<C-K>" : "\<C-W>k"
+  nnoremap <silent> <expr> <C-L> &buftype ==# 'terminal' ? "\<C-L>" : "\<C-W>l"
+else
+  nnoremap <C-H> <C-W>h
+  nnoremap <C-J> <C-W>j
+  nnoremap <C-K> <C-W>k
+  nnoremap <C-L> <C-W>l
+endif
 
-nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
+" Tmux navigation (Neovim-only, excludes terminal buffers)
+if has('nvim')
+  nnoremap <silent> <expr> <M-h> &buftype ==# 'terminal' ? "i\<Esc>h\<C-\>\<C-n>" : ':TmuxNavigateLeft<CR>'
+  nnoremap <silent> <expr> <M-j> &buftype ==# 'terminal' ? "i\<Esc>j\<C-\>\<C-n>" : ':TmuxNavigateDown<CR>'
+  nnoremap <silent> <expr> <M-k> &buftype ==# 'terminal' ? "i\<Esc>k\<C-\>\<C-n>" : ':TmuxNavigateUp<CR>'
+  nnoremap <silent> <expr> <M-l> &buftype ==# 'terminal' ? "i\<Esc>l\<C-\>\<C-n>" : ':TmuxNavigateRight<CR>'
+  nnoremap <silent> <expr> <M-\> &buftype ==# 'terminal' ? "i\<Esc>\\\<C-\>\<C-n>" : ':TmuxNavigatePrevious<CR>'
+else
+  nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
+  nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+  nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+  nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+  nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
+endif
+
+" Override vim-tmux-navigator terminal mappings after plugin loads
+if has('nvim')
+  augroup vimrc
+    autocmd VimEnter * tnoremap <C-H> <C-H>
+    autocmd VimEnter * tnoremap <C-J> <C-J>
+    autocmd VimEnter * tnoremap <C-K> <C-K>
+    autocmd VimEnter * tnoremap <C-L> <C-L>
+  augroup END
+endif
 
 " Tab switching
 nnoremap <silent> <C-Left> :tabp<CR>
