@@ -235,7 +235,7 @@ let g:strip_whitespace_on_save = 1
 
 let g:ctrlp_extensions = ['buffertag', 'dir']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20'
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 0        " Don't jump to an already-open file
 
