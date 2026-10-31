@@ -53,6 +53,7 @@ fi
 
 include "include/aliases.zsh"
 include "include/bindings.zsh"
+include "include/directories.zsh"
 
 # Initialize plugins
 
