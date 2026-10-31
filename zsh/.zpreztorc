@@ -15,14 +15,15 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'git' \
   'syntax-highlighting' \
-  'prompt'
+  'prompt' \
+  'completion'
 
 #
 # Prompt
 #
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'andrew'
+zstyle ':prezto:module:prompt' theme 'starship'
 
 #
 # Completions

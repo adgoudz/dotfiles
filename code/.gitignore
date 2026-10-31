@@ -1,0 +1,4 @@
+Library/Application Support/*/User/*
+
+!Library/Application Support/*/User/*.json
+

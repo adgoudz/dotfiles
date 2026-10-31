@@ -212,7 +212,7 @@ call <sid>hi("LineNr",        s:gui03, s:gui00, s:cterm02, s:cterm00, "", "")
 call <sid>hi("SignColumn",    s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
 call <sid>hi("StatusLine",    s:gui04, s:gui01, s:cterm04, s:cterm01, "none", "")
 call <sid>hi("StatusLineNC",  s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
-call <sid>hi("VertSplit",     s:gui01, s:gui01, s:cterm01, s:cterm01, "none", "")
+call <sid>hi("VertSplit",     s:gui01, s:gui01, s:cterm01, "", "none", "")
 call <sid>hi("ColorColumn",   "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("CursorColumn",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("CursorLine",    "", s:gui01, "", s:cterm01, "none", "")
@@ -341,6 +341,9 @@ call <sid>hi("jsGlobalNodeObjects", s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("jsExceptions",        s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("jsBuiltins",          s:gui09, "", s:cterm09, "", "", "")
 
+" JSON highlighting
+call <sid>hi("jsonKeyword",  s:gui0D, "", s:cterm0D, "", "", "")
+
 " Mail highlighting
 call <sid>hi("mailQuoted1",  s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "", "")
@@ -415,6 +418,13 @@ call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
 
 " Java highlighting
 call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
+
+"  https://neovim.io/doc/user/news-0.10.html
+if has("nvim-0.10.0")
+  hi! link WinSeparator VertSplit
+  hi! link FloatBorder  WinSeparator
+  hi! link NormalFloat  Pmenu
+endif
 
 " Remove functions
 delf <sid>hi

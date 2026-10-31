@@ -5,12 +5,13 @@ setopt nullglob
 setopt autocd
 setopt autopushd
 setopt pushdignoredups
+setopt promptsubst
 
 unsetopt caseglob
 
 # Initialize the completion system
 
-if type brew &>/dev/null; then
+if [[ $fpath != *$BREW_PREFIX/share/zsh/site-functions* ]]; then
     fpath=($BREW_PREFIX/share/zsh/site-functions $fpath)
 fi
 

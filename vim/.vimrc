@@ -71,11 +71,19 @@ if !has('nvim')
 else
   let g:plugdir=stdpath('data') . '/plugged'
 
-  set backupdir-=.  " Don't use current directory
-  set noautoread    " Don't reload files when changed outside of nvim
+  set backupdir-=.    " Don't use current directory
+  set noautoread      " Don't reload files when changed outside of nvim
 
-  set guicursor=    " Don't use bars for cursors
+  set guicursor=      " Don't use bars for cursors
+  set notermguicolors " Force the use of cterm colors in emulators that support 24-bit color
 endif
+
+" }}}
+"
+" Provider Options {{{
+"
+
+let g:python3_host_prog="/opt/homebrew/bin/python"
 
 " }}}
 "
@@ -112,8 +120,8 @@ set ignorecase            " Ignore case in search patterns
 set smartcase             " Override ignorecase when patterns contain uppercase chars
 
 set expandtab             " Use spaces instead of tabs
-set tabstop=4             " This many spaces to one tab
-set shiftwidth=4          " Default to tabstop for <<, >>, and smarttab
+set tabstop=2             " This many spaces to one tab
+set shiftwidth=2          " Default to tabstop for <<, >>, and smarttab
 set shiftround            " Round indents to multiple of shiftwidth
 
 set nowrap
@@ -125,6 +133,8 @@ set formatoptions+=l      " Don't format existing long lines
 set formatoptions+=1      " Don't break after single characters
 set formatoptions+=n      " Format numbered lists (requires autoindent)
 set formatoptions+=r      " Insert comment leader after <Enter>
+
+set fillchars+=vert:│     " Use U+2502 for the vertical window separator
 
 " }}}
 "
@@ -153,6 +163,10 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'solarnz/thrift.vim'
+Plug 'jparise/vim-graphql'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " }}}
@@ -166,7 +180,7 @@ let g:airline_skip_empty_sections = 1
 
 let g:airline#extensions#ctrlp#color_template = 'normal'
 
-let g:airline#extensions#obsession#indicator_text = 'ﴖ'
+let g:airline#extensions#obsession#indicator_text = ''
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        " Tab number only
