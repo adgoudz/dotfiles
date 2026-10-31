@@ -16,7 +16,8 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'syntax-highlighting' \
   'prompt' \
-  'completion'
+  'completion' \
+  'custom'
 
 #
 # Prompt
