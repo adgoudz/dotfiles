@@ -1,0 +1,20 @@
+# Claude Code runtime state
+.claude/.last-cleanup
+.claude/.last-update-result.json
+.claude/backups/
+.claude/cache/
+.claude/chrome/
+.claude/daemon.log
+.claude/daemon/
+.claude/file-history/
+.claude/history.jsonl
+.claude/jobs/
+.claude/mcp-needs-auth-cache.json
+.claude/plugins/
+.claude/projects/
+.claude/sessions/
+.claude/settings.json.bak
+.claude/shell-snapshots/
+.claude/skills/synced/
+.claude/state/
+.claude/telemetry/
