@@ -54,7 +54,7 @@ repo root without it, pass `-t ~` explicitly.
 - The Zsh prompt theme lives in the `zsh/.zprezto` submodule (fork: `adgoudz/prezto`), not
   in this repo. Commit changes there first, then bump the submodule.
 - The "Astra" color scheme is duplicated across `alacritty/.config/alacritty/alacritty.yml`,
-  `vim/.vim/colors/base16-astra.vim`, and
+  `vim/.vim/colors/base16-astra.vim`, `rex/.config/rex/themes/astra`, and
   `vim/.vim/autoload/airline/themes/base16_astra.vim`. Keep them in sync.
 
 ## Commits
