@@ -148,25 +148,24 @@ endif
 
 " Plugins
 call plug#begin(g:plugdir)
-Plug 'vim-airline/vim-airline'
-
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'jparise/vim-graphql'
 Plug 'majutsushi/tagbar'
-
-Plug 'scrooloose/nerdtree'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdcommenter'
-
+Plug 'scrooloose/nerdtree'
+Plug 'solarnz/thrift.vim'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
-Plug 'qpkorr/vim-bufkill'
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'vim-airline/vim-airline'
 
-Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'solarnz/thrift.vim'
-Plug 'jparise/vim-graphql'
-Plug 'hashivim/vim-terraform'
+if has('nvim')
+  Plug 'lewis6991/gitsigns.nvim'
+endif
 call plug#end()
 
 " }}}
@@ -368,6 +367,10 @@ nmap <silent> <leader>nf :NERDTreeFind<CR>
 nmap <silent> <leader>ob :Obsession<CR>
 nmap <silent> <leader>ws :StripWhitespace<CR>
 nmap <silent> <leader>ts :ToggleWhitespace<CR>
+
+if has('nvim')
+  nmap <silent> <leader>gs :Gitsigns toggle_signs<CR>
+endif
 
 " }}}
 "

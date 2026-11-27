@@ -5,32 +5,26 @@
 
 # Overview
 
-This project exists for personal reasons, but occasionally I'm asked how I configure
-my development environment. I use these dotfiles to quickly set up my environment and 
-achieve feature parity on different Unix-like operating systems.
-
 [Dotfile Management](#dotfile-management)  
    * [GNU Stow](#gnu-stow)
 
-[Using this Repository](#using-this-repository)  
+[Using This Repository](#using-this-repository)  
    * [Environment-Specific Configuration](#environment-specific-configuration)   
    * [Configuring Stow](#configuring-stow)  
 
 [Tools & Configuration](#tools--configuration)  
-   * [Terminal](#terminal)  
+   * [Terminals](#terminals)  
    * [Shell](#shell)  
    * [Editor](#editor)  
    * [Themes](#themes)  
-   * [Color Scheme](#color-scheme)  
-   * [Other Tools](#other-tools)
+   * [Color Scheme](#color-scheme)
 
 
 # Dotfile Management
 
-The developer community offers several [dotfile managers] and [other great ideas] for
-how to manage dotfiles. While I'm biased toward my strategy, feel free to ignore this if 
-some other system is going to level up your productivity ([xkcd #1205] outlines my 
-favorite approach to measuring this).
+The developer community offers several [dotfile managers] and [other great ideas] for how
+to manage dotfiles. While I'm biased toward my strategy, having _any_ system will level
+up your productivity when bootstrapping a new machine.
 
 Assuming I have a package manager installed (either [Homebrew] or a well-supported native
 option), the first tools I install are:
@@ -61,15 +55,14 @@ I chose Stow based on these requirements:
    I'll talk about how Stow can support this under
    [Environment-Specific Configuration](#environment-specific-configuration).
 
-[other great ideas]: https://news.ycombinator.com/item?id=11070797
 [dotfile managers]: https://github.com/topics/dotfile-manager
-[xkcd #1205]: https://xkcd.com/1205/
 [homebrew]: https://brew.sh/
+[other great ideas]: https://news.ycombinator.com/item?id=11070797
 
-[stow]: https://www.gnu.org/software/stow/
-[stow-installation]: https://github.com/aspiers/stow/blob/master/INSTALL.md
 [stow-ignore-lists]: https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html
+[stow-installation]: https://github.com/aspiers/stow/blob/master/INSTALL.md
 [stow-resource-files]: https://www.gnu.org/software/stow/manual/html_node/Resource-Files.html
+[stow]: https://www.gnu.org/software/stow/
 
 
 ## GNU Stow
@@ -141,7 +134,7 @@ expects to find the global ignore file:
 ```
 /Users/Andrew            # The "target" directory
 └── .config
-    └── git -> ../../dotfiles/git/.config/git
+    └── git -> ../dotfiles/git/.config/git
 ```
 
 Stow is powerful enough to work with existing directories in the target directory (e.g.,
@@ -173,7 +166,7 @@ for `stow` commands, which makes it easier to work with nested stow directories.
 running any other commands in this repository, I effectively set up Stow using Stow:
 
 ```shell
-/Users/Andrew/dotfiles/local/home/macos $ stow -vt /Users/Andrew stow
+~/dotfiles/local/home/macos $ stow -vt /Users/Andrew stow
 LINK: .stowrc => dotfiles/local/home/macos/stow/.stowrc
 ```
 
@@ -195,7 +188,7 @@ The directory structure of this repository resembles the following:
 │
 ├── local
 │   ├── home
-│   │   ├── macos        # A nested stow directory for MacOS packages
+│   │   ├── macos        # A nested stow directory for macOS packages
 │   │   │   ├── tool-a
 │   │   │   ├── tool-b
 │   │   │   └── stow
@@ -235,7 +228,7 @@ creating a link to the directory containing the global ignore file:
 
 ```shell
 ~/dotfiles $ stow -v git
-LINK: .gitconfig => ../dotfiles/git/.gitconfig
+LINK: .gitconfig => dotfiles/git/.gitconfig
 LINK: .config/git => ../dotfiles/git/.config/git
 ```
 
@@ -244,7 +237,7 @@ to symlink it in `.config/git` with Git's other configuration:
 
 ```
 local/home/macos         # The nested stow directory
-└── git                  # A MacOS-specific package directory for git
+└── git                  # A macOS-specific package directory for git
     └── .config
         └── git
             └── gitconfig.inc
@@ -286,7 +279,7 @@ Local configuration can also be organized under a single package:
 
 ```
 local/home               # The nested stow directory
-└── macos                # A package directory for all configuraton used on MacOS
+└── macos                # A package directory for all configuration used on macOS
     └── .config
         ├── git
         └── zsh
@@ -321,6 +314,12 @@ The following Stow-specific files are used in this repository:
   This [ignore list][stow-ignore-lists] is required when a package directory contains
   files that shouldn't be symlinked. It uses the Perl regular expression syntax.
 
+* `./stow/.stow-global-ignore`
+
+  This [ignore list][stow-ignore-lists] overrides Stow's built-in default ignore list for
+  every package that doesn't define its own `.stow-local-ignore`. Stow it into the target
+  directory alongside `.stowrc`.
+
 * `./local/<stow-directory>/stow/.stowrc`
 
   This [resource file][stow-resource-files] makes it possible to define default
@@ -335,72 +334,28 @@ The following Stow-specific files are used in this repository:
 
 # Tools & Configuration
 
-The remainder of this README covers the software I use most and their corresponding 
-configuration files. I use `brew` to install almost everything on both MacOS and Linux-based 
-hosts.
 
-Note that my configuration is very opinionated and I've written most of it from scratch to 
-fit my needs (with plenty of ideas borrowed from the community). While everything should
-_just work_, it's probably only useful as an example and I didn't write it to be copied
-as-is.
+## Terminals
 
-## Terminal
+I use a few different emulators and multiplexers:
 
-[alacritty/alacritty](https://github.com/alacritty/alacritty)  
-Alacritty is a fast terminal emulator. It's also very simple (to a fault, some might say), 
-so those who expect support for window tabs and other basic functionality may find it harder
-to use.
+* [.config/alacritty/alacritty.yml]
+* [.config/rex/init.lua]
+* [.tmux.conf]
+* [com.googlecode.iterm2.plist]
 
-[tmux/tmux](https://github.com/tmux/tmux)  
-Alacritty eschews tabs in favor of pairing the emulator with tmux, which multiplexes
-a single terminal to simulate panes and windows. There's a learning curve for tmux, but
-it allows me to use a consistent terminal environment across most emulators (along
-with a few other nice features).
+[.config/alacritty/alacritty.yml]: alacritty/.config/alacritty/alacritty.yml
+[.config/rex/init.lua]: rex/.config/rex/init.lua
+[.tmux.conf]: tmux/.tmux.conf
+[com.googlecode.iterm2.plist]: etc/iterm2/com.googlecode.iterm2.plist
 
-[gnachman/iterm2](https://iterm2.com)  
-In the off-chance I'm unable to run Alacritty, I've backed up some iTerm2 configuration 
-that closely resembles my Alacritty settings.
-
-### Configuration
-
-* [.config/alacritty/alacritty.yml](alacritty/.config/alacritty/alacritty.yml)
-* [com.googlecode.iterm2.plist](etc/iterm2/com.googlecode.iterm2.plist)
-* [.tmux.conf](tmux/.tmux.conf)
-
-### Plugins
-
-[tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)  
-TPM is the standard plugin manager for tmux. I currently use it for:
-
-* [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect)  
-  This lets you recreate an entire Tmux session after a restart, including windows,
-  current directories, and even Neovim sessions (see vim-obsession under [Editor](#editor)).
-
-* [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)  
-  This works together with a Neovim plugin to enable moving between Neovim and tmux
-  windows with the same keyboard shortcuts. I'll talk more about this below.
 
 ## Shell
 
-[zsh-users/zsh](https://github.com/zsh-users/zsh)  
-Z Shell (Zsh) was a gateway drug of sorts for a generation of command-line users. It 
-provides a programming language like Bash with features like tab completion and
-themeable prompts, transforming a command line into a powerful editor. The cool kids
-might be using [fish], but I like Zsh for its active development community and its
-similarities to POSIX shells.
-
-[sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto)  
-One of the most popular projects on GitHub is a configuration and plugin manager called
-Oh My Zsh (OMZ). I used OMZ for a few years before I ultimately dropped it for Prezto,
-which was created after its author [couldn't convince][gh-377] Robby Russell to simplify the 
-framework. While the Prezto community is significantly less active than OMZ's, my command 
-prompt loads more quickly with Prezto.
-
-[fish]: https://github.com/fish-shell/fish-shell
-[omz]: https://github.com/ohmyzsh/ohmyzsh
-[gh-377]: https://github.com/ohmyzsh/ohmyzsh/issues/377
-
-### Configuration
+My ZSH configuration is split between global and environment-specific scripts. Global
+scripts run on every one of my machines. [Environment-specific
+scripts](#environment-specific-configuration) are located under
+each `local/<env>/<os>/zsh` directory.
 
 | Usage                                             | Global Script | Local Script               |
 | ------------------------------------------------- | ------------- | -------------------------- |
@@ -412,12 +367,12 @@ prompt loads more quickly with Prezto.
 See the Prezto [documentation][prezto-runcoms] and [chapter 2][zsh-startup-files] of the
 Zsh guide for an explanation of these files.
 
-[.zprofile]: zsh/.zprofile
-[.zshrc]: zsh/.zshrc
-[.zpreztorc]: zsh/.zpreztorc
-[.zshenv]: local/home/macos/zsh/.zshenv
 [.config/zsh/zprofile.inc]: local/home/macos/zsh/.config/zsh/zprofile.inc
 [.config/zsh/zshrc.inc]: local/home/macos/zsh/.config/zsh/zshrc.inc
+[.zpreztorc]: zsh/.zpreztorc
+[.zprofile]: zsh/.zprofile
+[.zshenv]: local/home/macos/zsh/.zshenv
+[.zshrc]: zsh/.zshrc
 
 [prezto-runcoms]: https://github.com/adgoudz/prezto/blob/master/runcoms/README.md
 [zsh-startup-files]: https://zsh.sourceforge.io/Guide/zshguide02.html
@@ -425,116 +380,38 @@ Zsh guide for an explanation of these files.
 
 ## Editor
 
-[neovim/neovim](https://github.com/neovim/neovim)  
-Neovim began as a fork of [Vim] in 2014 with a faster plugin system, a built-in terminal
-emulator, and many other features. I'll only use Vim if I'm on a host where I can't
-install Neovim, but since this happens often when I log in to remote servers, my Neovim
-configuration is [backwards-compatible][nvim-from-vim] with Vim. My configuration will
-also apply Neovim's defaults in Vim so that the editing behavior is identical between the
-two.
+My [Neovim][neovim] configuration is [backwards-compatible][nvim-from-vim] with Vim. My
+configuration will also apply Neovim's defaults in Vim so that the editing behavior is
+identical between the two.
 
-[vim]: https://github.com/vim/vim
-[nvim-from-vim]: https://neovim.io/doc/user/nvim.html#nvim-from-vim
-
-### Configuration
-
-* [.vimrc](vim/.vimrc)
-* [.config/nvim/init.vim](nvim/.config/nvim/init.vim)
+* [.vimrc]
+* [.config/nvim/init.vim]
 
 If you're viewing `.vimrc` in Neovim, use `zo` and `zc` in normal mode to open and close
 [folds][nvim-folds].
 
+[.config/nvim/init.vim]: nvim/.config/nvim/init.vim
+[neovim]: https://github.com/neovim/neovim
 [nvim-folds]: https://neovim.io/doc/user/fold.html
-
-### Plugins
-
-[junegunn/vim-plug](https://github.com/junegunn/vim-plug)  
-vim-plug is one of several good options for plugin management with support for both Neovim
-and Vim. My preferred plugins are installed in my `.vimrc`, the most important of which are:
-
-* [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)  
-  This provides visual cues and context-specific information in Neovim's status line. See
-  [Themes](#themes) below.
-
-* [tpope/vim-obsession](https://github.com/tpope/vim-obsession)  
-  This wraps Neovim's `:mksession` to transparently save windows, tabs, and buffers. By
-  pairing this with tmux-resurrect, you can automatically restore your editors when you
-  restore your tmux session.
-
-* [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)  
-  As mentioned above, this works together with a set of tmux key bindings to enable moving
-  between Neovim and tmux windows with the same keyboard shortcuts.
+[nvim-from-vim]: https://neovim.io/doc/user/nvim.html#nvim-from-vim
 
 
 ## Themes
 
-<p align="center">
-  <img width="500" alt="Theme in normal mode"
-       src="https://user-images.githubusercontent.com/1766968/168869631-fec0eeb5-d281-4ea4-9298-c7a794e3b361.png">
-  <img width="500" alt="Theme in command mode"
-       src="https://user-images.githubusercontent.com/1766968/168869626-7eea3fd4-b707-4acd-8e00-90d3a6e34482.png">
-  <img width="500" alt="Theme in insert mode"
-       src="https://user-images.githubusercontent.com/1766968/168869629-99733048-1536-4907-99e7-86cc84dac4ba.png">
-  <img width="500" alt="Theme in replace mode"
-       src="https://user-images.githubusercontent.com/1766968/168869635-5dba7a33-d929-4c27-aeec-6f94f0fa5232.png">
-  <img width="500" alt="Theme in visual-line mode"
-       src="https://user-images.githubusercontent.com/1766968/168869639-afa23fd8-6b02-42cb-bf6e-03c997f22a4a.png">
-</p>
+My [powerlevel10k-like][powerlevel10k] theme is actually a combination of themes for
+different tools:
 
-I use custom themes for tmux, Zsh, and Neovim, inspired by [Powerline] (a collection of
-status line plugins written in Python) and [powerlevel10k] (a Zsh theme). My theme for
-Neovim was created for the vim-airline plugin and my prompt theme was created for
-Prezto.
+| Tool          | Theming System | Configuration            |
+| ------------- | -------------- | ------------------------ |
+| **Neovim**    | [vim-airline]  | [.vimrc]                 |
+| **Zsh**       | [starship]     | [.config/starship.toml]  |
+| **tmux**      |                | [.tmux.conf]             |
 
-<p align="center">
-  <img width="250" alt="prompt-shadow"
-       src="https://user-images.githubusercontent.com/1766968/168869633-f11fbda4-e371-4859-9b56-b0e0bddbb0d5.png">
-</p>
-
-While Powerline and powerlevel10k are both powerful and extensible, I prefer not to use
-them for a few reasons:
-
-* Powerline [didn't support Neovim][gh-1287] at the time I switched from Vim. Powerline
-  is also a heavyweight framework that requires background Python processes, and I've
-  found vim-airline to be faster and more reliable.
-
-* powerlevel10k targets the Zsh prompt only. I prefer a minimal prompt theme, so the
-  overhead of another large dependency doesn't seem necessary to me.
-
-[powerline]: https://github.com/powerline/powerline
-[powerlevel10k]: https://github.com/romkatv/powerlevel10k
-[gh-1287]: https://github.com/powerline/powerline/issues/1287
-
-### Fonts
-
-<p align="center">
-  <img width="250" alt="JetBrains Mono Dark"
-       src="https://user-images.githubusercontent.com/1766968/168935033-d7153211-1ed0-4a06-ada6-0875c8cc5eb9.png#gh-dark-mode-only">
-  <img width="250" alt="JetBrains Mono Light"
-       src="https://user-images.githubusercontent.com/1766968/168938169-424f50c8-cbb9-45cc-8e49-7aaeb88755a1.png#gh-light-mode-only">
-</p>
-
-The themes above use glyphs (icons) available with [Nerd Fonts], a collection of
-well-known fonts patched with glyphs from Powerline, FontAwesome, and other icon-based 
-fonts. I use [JetBrains Mono], however, any font from the collection should be
-compatible.
-
-[nerd fonts]: https://github.com/ryanoasis/nerd-fonts
-[jetbrains mono]: https://github.com/JetBrains/JetBrainsMono
-
-### Configuration
-
-Each theme is self-contained in the following files:
-
-| Tool          | Configuration                                                               |
-| ------------- | --------------------------------------------------------------------------- |
-| **tmux**      | [.tmux.conf]                                                                |
-| **Zsh**       | [.zprezto/modules/prompt/functions/prompt_andrew_setup] (at adgoudz/prezto) |
-| **Neovim**    | [.vimrc]                                                                    |
-
+[.config/starship.toml]: zsh/.config/starship.toml
 [.vimrc]: vim/.vimrc
-[.tmux.conf]: tmux/.tmux.conf
-[.zprezto/modules/prompt/functions/prompt_andrew_setup]: https://github.com/adgoudz/prezto/blob/master/modules/prompt/functions/prompt_andrew_setup
+[powerlevel10k]: https://github.com/romkatv/powerlevel10k
+[starship]: https://starship.rs/
+[vim-airline]: https://github.com/vim-airline/vim-airline
 
 
 ## Color Scheme
@@ -544,42 +421,21 @@ Each theme is self-contained in the following files:
        src="https://user-images.githubusercontent.com/1766968/168866981-feace42c-5634-4b88-a9e2-43519f7a7f85.png">
 </p>
 
-I use a custom 16-color scheme modeled on [Base16] and inspired by [Solarized] and
-[Tomorrow Night]. I've named it "Astra", and while I've adapted it to almost every
-tool I use, I need to make time to contribute it back to ~Base16~ [tinted-theming]. 
-
-The scheme is configured in each of the following:
+I use a custom 16-color scheme named Astra. It's modeled on [Base16], and inspired by
+[Solarized] and [Tomorrow Night]. The scheme is configured in each of the following locations:
 
 | Tool            | Configuration                                   |
 | --------------- | ----------------------------------------------- |
 | **Alacritty**   | [.config/alacritty/alacritty.yml]               |
 | **Neovim**      | [.vim/colors/base16-astra.vim]                  |
+| **Rex**         | [.config/rex/themes/astra]                      |
 | **vim-airline** | [.vim/autoload/airline/themes/base16_astra.vim] |
 
-[.config/alacritty/alacritty.yml]: alacritty/.config/alacritty/alacritty.yml
-[.vim/colors/base16-astra.vim]: vim/.vim/colors/base16-astra.vim
+[.config/rex/themes/astra]: rex/.config/rex/themes/astra
 [.vim/autoload/airline/themes/base16_astra.vim]: vim/.vim/autoload/airline/themes/base16_astra.vim
+[.vim/colors/base16-astra.vim]: vim/.vim/colors/base16-astra.vim
 
 [base16]: https://github.com/chriskempson/base16
-[tinted-theming]: https://github.com/tinted-theming
 [solarized]: https://github.com/altercation/solarized
 [tomorrow night]: https://base16.netlify.app/previews/base16-tomorrow-night.html
-
-
-## Other Tools
-
-* [asdf-vm/asdf](https://github.com/asdf-vm/asdf)  
-  One version manager to rule them all.
-
-* [junegunn/fzf](https://github.com/junegunn/fzf)  
-  A fantastic fuzzy-finder for your file system and almost anything else you can think of.
-
-* [burntsushi/ripgrep](https://github.com/BurntSushi/ripgrep)  
-  A regex search tool. Like `grep`, `ag`, and `pt`, but faster.
-  
-* [rupa/z](https://github.com/rupa/z)  
-  No more creating aliases for `cd`-ing into your favorite directories.
-
-* [htop-dev/htop](https://github.com/htop-dev/htop)  
-  An interactive process viewer. Like `top`, but fancier.
 
