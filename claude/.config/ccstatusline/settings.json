@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "lines": [
     [
       {
@@ -31,6 +31,17 @@
         "rawValue": true
       },
       {
+        "id": "1ee50ef5-8c53-4708-8ff9-d6a5c2dceec8",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "f8204d6c-c8e4-416b-9a75-994cf27f56fd",
+        "type": "thinking-effort",
+        "color": "brightCyan",
+        "rawValue": true
+      },
+      {
         "id": "b3f54570-762a-4986-9d2b-7e30d6f056c8",
         "type": "separator",
         "color": "brightYellow"
@@ -49,20 +60,58 @@
       {
         "id": "b5dc9dea-8d5a-4f53-bb1b-3ccf060109e9",
         "type": "tokens-output",
+        "color": "brightBlack",
+        "rawValue": true
+      },
+      {
+        "id": "7f9961d5-f5a7-45a7-9026-d1177a3f337a",
+        "type": "separator",
+        "color": "brightYellow"
+      },
+      {
+        "id": "b6fbf03d-814d-4b9c-b436-567ae9a28fa9",
+        "type": "session-usage",
         "rawValue": true,
         "color": "brightBlack"
       },
       {
+        "id": "69919ef0-1b6d-41a4-916b-fac40d6005db",
+        "type": "separator",
+        "color": "brightYellow"
+      },
+      {
+        "id": "4eb2f3da-5d71-47f5-950f-15af204251af",
+        "type": "weekly-usage",
+        "rawValue": true,
+        "color": "brightBlack"
+      },
+      {
+        "id": "fccaad2e-7260-4fcc-ac32-e00588838937",
+        "type": "separator",
+        "color": "brightYellow"
+      },
+      {
+        "id": "930e1c2e-0eae-4ca7-8c51-13eace57271b",
+        "type": "version",
+        "color": "brightRed"
+      },
+      {
         "id": "083a56cd-c4f8-4d2c-9066-922fe75a2541",
-        "type": "flex-separator"
+        "type": "flex-separator",
+        "color": "brightYellow"
       }
     ]
   ],
   "flexMode": "full-minus-40",
   "compactThreshold": 60,
   "colorLevel": 1,
+  "defaultPaddingSide": "both",
   "inheritSeparatorColors": false,
   "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "terminalWidthCacheTtlSeconds": 5,
+  "customCommandCacheTtlSeconds": 0,
+  "minimalistMode": false,
   "powerline": {
     "enabled": false,
     "separators": [
@@ -73,6 +122,7 @@
     ],
     "startCaps": [],
     "endCaps": [],
-    "autoAlign": false
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
   }
 }
