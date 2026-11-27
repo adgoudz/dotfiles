@@ -1,4 +1,5 @@
 {
+  "cleanupPeriodDays": 365,
   "attribution": {
     "commit": "",
     "pr": ""
@@ -47,7 +48,21 @@
     ],
     "deny": [],
     "ask": [],
-    "defaultMode": "default"
+    "defaultMode": "auto"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude --feature-session-naming=false 2>/dev/null || true'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
   },
   "statusLine": {
     "type": "command",
@@ -55,8 +70,24 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "pr-review-toolkit@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true
+    "cc-plugin-diff@builtin": false
   },
-  "alwaysThinkingEnabled": true
+  "extraKnownMarketplaces": {
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      }
+    },
+    "cursor-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "cursor/plugins"
+      }
+    }
+  },
+  "outputStyle": "Concise",
+  "tui": "fullscreen",
+  "theme": "dark-ansi",
+  "editorMode": "vim"
 }
