@@ -1,0 +1,31 @@
+# Astra color scheme in Ghostty theme format, for importing into Rex
+# (theme sheet > import). Keep in sync with alacritty.yml and the vim files.
+
+background = #1d1d1d
+foreground = #bfd0d2
+
+cursor-color = #bfd0d2
+cursor-text = #bfd0d2
+
+selection-background = #8abeb7
+selection-foreground = #ffffff
+
+# Normal
+palette = 0=#1d1d1d
+palette = 1=#cc6666
+palette = 2=#b5bd68
+palette = 3=#f0c674
+palette = 4=#81a2be
+palette = 5=#b294bb
+palette = 6=#7bb7af
+palette = 7=#bfd0d2
+
+# Bright
+palette = 8=#839496
+palette = 9=#de935f
+palette = 10=#282a2e
+palette = 11=#373b41
+palette = 12=#b4b7b4
+palette = 13=#9867aa
+palette = 14=#fdf6e3
+palette = 15=#ffffff
